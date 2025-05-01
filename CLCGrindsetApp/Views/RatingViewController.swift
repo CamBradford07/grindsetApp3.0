@@ -32,7 +32,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        cell.textLabel?.text = classesTaken[indexPath.row].courseName
+        cell.textLabel?.text = allCourses[indexPath.row].courseName
         return cell
     }
     
