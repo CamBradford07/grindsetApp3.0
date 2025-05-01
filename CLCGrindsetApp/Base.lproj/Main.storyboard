@@ -778,6 +778,7 @@ student or teacher?</string>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGray3Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="se4-T3-h0U" secondAttribute="trailing" id="7IM-aU-h3H"/>
                                                         <constraint firstAttribute="bottom" secondItem="se4-T3-h0U" secondAttribute="bottom" constant="10" id="PR5-PS-NTW"/>
@@ -1803,7 +1804,7 @@ apfmae</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Bdp-Os-U9w"/>
-        <segue reference="dK8-iy-X4R"/>
+        <segue reference="NVJ-nc-Hei"/>
         <segue reference="jLn-Ph-ixY"/>
     </inferredMetricsTieBreakers>
     <resources>
