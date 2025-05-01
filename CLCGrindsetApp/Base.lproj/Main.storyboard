@@ -1240,7 +1240,7 @@ apfmae</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wqI-l0-5gL">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wqI-l0-5gL">
                                         <rect key="frame" x="0.0" y="214.66666666666669" width="393" height="71.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -1279,6 +1279,10 @@ apfmae</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X0y-O4-4Qj"/>
+                    <connections>
+                        <outlet property="bioOutlet" destination="lg8-t8-wVM" id="H55-1c-NzA"/>
+                        <outlet property="userOutlet" destination="wqI-l0-5gL" id="RQQ-PD-fqO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kR-Tg-unJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
