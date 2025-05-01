@@ -23,17 +23,20 @@ class EditTeachProfileViewController: UIViewController {
         
         if teacherNameOutlet.text != ""{
             var teacherName = teacherNameOutlet.text!
+            var bio = "Teacher Has Not Added A Bio Yet!"
+            if bioOutlet.text != ""{
+                bio = bioOutlet.text!
+            }
+            else{
+                print("No bio inputed")
+            }
+            AppData.teachers.append(Teacher(name: teacherName, bio: bio))
         }
         else{
             print("No name inputed")
         }
         
-        if bioOutlet.text != ""{
-            AppData.bio = bioOutlet.text!
-        }
-        else{
-            AppData.bio = "Teacher Has Not Added A Bio Yet!"
-        }
+        
     }
   
     
