@@ -15,14 +15,16 @@ class Student{
     var selectedClasses: [String]!
     var name: String!
     var age: Int!
+    var takenClasses: [String]!
     
-    init(username: String!, password: String!, gradeLevel: Int!, selectedClasses: [String]!, name: String!, age: Int!) {
+    init(username: String!, password: String!, gradeLevel: Int!, selectedClasses: [String]!, name: String!, age: Int!, takenClasses: [String]!) {
         self.username = username
         self.password = password
         self.gradeLevel = gradeLevel
         self.selectedClasses = selectedClasses
         self.name = name
         self.age = age
+        self.takenClasses = takenClasses
     }
     
     init(dict: [String : Any]){
@@ -50,16 +52,19 @@ class Student{
             self.age = age
         }
         else{self.age = 0}
+        if let takenClasses = dict["TakenClasses"] as? [String]{
+            self.takenClasses = takenClasses
+        }
     }
     
     func addToFirebase(docRef: DocumentReference){
-        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!] as! [String : Any]
+        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!] as! [String : Any]
         let uploadableStud = [username : informationDict] as! [String : Any]
         docRef.setData(uploadableStud, merge: true)
     }
     
     func saveChanges(docRef: DocumentReference){
-        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!] as! [String : Any]
+        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!] as! [String : Any]
         let uploadableStud = [username : informationDict] as! [String : Any]
         docRef.updateData(uploadableStud)
     }
