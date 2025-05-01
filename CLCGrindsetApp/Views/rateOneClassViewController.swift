@@ -39,7 +39,9 @@ class rateOneClassViewController: UIViewController{
     
     @IBAction func buttonAction(_ sender: UIButton) {
         
+        let fun = 
         
+        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -56,7 +58,6 @@ class rateOneClassViewController: UIViewController{
             }
         }
         AppData.courseToRate?.totalFunRank.append(Double(selectedIndex))
-        AppData.courseToRate?.numberOfFunRank += 1
     }
     
     
@@ -73,7 +74,6 @@ class rateOneClassViewController: UIViewController{
             }
         }
         AppData.courseToRate?.totalDifficultyRank.append(Double(selectedIndex))
-        AppData.courseToRate?.numberOfDifficultyRank += 1
     }
     
    
@@ -89,7 +89,6 @@ class rateOneClassViewController: UIViewController{
             }
         }
         AppData.courseToRate?.totalUsefulnessRank.append(Double(selectedIndex))
-        AppData.courseToRate?.numberOfUsefulnessRank += 1
     }
     
     
@@ -106,7 +105,6 @@ class rateOneClassViewController: UIViewController{
             }
         }
         AppData.courseToRate?.totalWorkRank.append(Double(selectedIndex))
-        AppData.courseToRate?.numberOfWorkRank += 1
     }
     
     

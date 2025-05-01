@@ -27,6 +27,8 @@ class ClassDetailViewController: UIViewController  {
         textView.text = "•Required Classes: \(classClicked.cclass.prerequisite)\n•\(classClicked.cclass.term)\n•Description \(classClicked.cclass.description)\n•Notes: \(classClicked.cclass.enrollmentNotes)"
     }
     @IBAction func addToSchedule(_ sender: Any) {
+        classClicked.selectedClasses.append(classClicked.cclass)
+
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.popViewController(animated: true)

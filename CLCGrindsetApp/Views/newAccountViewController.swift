@@ -79,7 +79,7 @@ class newAccountViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             var accountName = nameOutlet.text!
-            var newStudent = Student(username: username, password: password, gradeLevel: 0, selectedClasses: [String](), name: accountName, age: accountAge)
+            var newStudent = Student(username: username, password: password, gradeLevel: 0, selectedClasses: [String](), name: accountName, age: accountAge, takenClasses: [String]())
             newStudent.addToFirebase(docRef: AppData.ref)
             AppData.currentStudent = newStudent
             AppData.saveUserAndPass()
