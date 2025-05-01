@@ -32,6 +32,8 @@ class AppData{
     
     static var bio = ""
     
+    static var teachers = [Teacher]()
+    
     static func saveUserAndPass(){
         if let currentStudent = currentStudent{
             // check if it even exists
