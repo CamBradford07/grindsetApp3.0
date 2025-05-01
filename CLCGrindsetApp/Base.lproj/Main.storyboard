@@ -1217,10 +1217,10 @@ apfmae</string>
             </objects>
             <point key="canvasLocation" x="4106" y="-2100"/>
         </scene>
-        <!--View Controller-->
+        <!--Teacher Profile View Controller-->
         <scene sceneID="izy-jb-Bcf">
             <objects>
-                <viewController id="aE4-bX-Blj" sceneMemberID="viewController">
+                <viewController id="aE4-bX-Blj" customClass="TeacherProfileViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EYh-iK-fvV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1229,13 +1229,32 @@ apfmae</string>
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-zu-qU1">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="64.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="143"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="53"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czJ-0P-QIb">
+                                        <rect key="frame" x="0.0" y="143" width="393" height="71.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wqI-l0-5gL">
+                                        <rect key="frame" x="0.0" y="214.66666666666669" width="393" height="71.333333333333314"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnY-Wy-BMa">
+                                        <rect key="frame" x="0.0" y="286" width="393" height="71.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-t8-wVM">
-                                        <rect key="frame" x="0.0" y="64.666666666666686" width="393" height="650.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="357.66666666666674" width="393" height="357.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1243,7 +1262,10 @@ apfmae</string>
                                     </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lg8-t8-wVM" firstAttribute="height" secondItem="gfq-04-OnB" secondAttribute="height" multiplier="0.909557" id="eNK-aK-iZ3"/>
+                                    <constraint firstItem="BnY-Wy-BMa" firstAttribute="height" secondItem="gfq-04-OnB" secondAttribute="height" multiplier="0.1" id="TaZ-JI-w2s"/>
+                                    <constraint firstItem="wqI-l0-5gL" firstAttribute="height" secondItem="gfq-04-OnB" secondAttribute="height" multiplier="0.1" id="UZg-Ql-pNu"/>
+                                    <constraint firstItem="lg8-t8-wVM" firstAttribute="height" secondItem="gfq-04-OnB" secondAttribute="height" multiplier="0.5" id="eNK-aK-iZ3"/>
+                                    <constraint firstItem="czJ-0P-QIb" firstAttribute="height" secondItem="gfq-04-OnB" secondAttribute="height" multiplier="0.1" id="vfV-sN-h9o"/>
                                 </constraints>
                             </stackView>
                         </subviews>
