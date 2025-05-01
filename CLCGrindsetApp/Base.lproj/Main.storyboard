@@ -1223,14 +1223,43 @@ apfmae</string>
                     <view key="view" contentMode="scaleToFill" id="EYh-iK-fvV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gfq-04-OnB">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-zu-qU1">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="64.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="53"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-t8-wVM">
+                                        <rect key="frame" x="0.0" y="64.666666666666686" width="393" height="650.33333333333326"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lg8-t8-wVM" firstAttribute="height" secondItem="gfq-04-OnB" secondAttribute="height" multiplier="0.909557" id="eNK-aK-iZ3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7OQ-7S-zuk"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <constraints>
+                            <constraint firstItem="gfq-04-OnB" firstAttribute="top" secondItem="7OQ-7S-zuk" secondAttribute="top" id="dAp-fu-Eey"/>
+                            <constraint firstItem="gfq-04-OnB" firstAttribute="leading" secondItem="7OQ-7S-zuk" secondAttribute="leading" id="gcU-WK-IJB"/>
+                            <constraint firstItem="7OQ-7S-zuk" firstAttribute="trailing" secondItem="gfq-04-OnB" secondAttribute="trailing" id="hdo-c8-n16"/>
+                            <constraint firstItem="7OQ-7S-zuk" firstAttribute="bottom" secondItem="gfq-04-OnB" secondAttribute="bottom" id="pCn-J4-Uld"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X0y-O4-4Qj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kR-Tg-unJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4963" y="-2115"/>
+            <point key="canvasLocation" x="4962.5954198473282" y="-2115.4929577464791"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M8j-cq-KFY">
