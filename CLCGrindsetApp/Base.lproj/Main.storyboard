@@ -536,7 +536,6 @@ student or teacher?</string>
                     </view>
                     <navigationItem key="navigationItem" id="010-lg-j3w"/>
                     <connections>
-                        <outlet property="funSC" destination="L1a-4j-8A3" id="nuA-M6-3qz"/>
                         <outlet property="titleOutletOneRate" destination="CHy-Oy-LqD" id="Fli-OH-fNe"/>
                     </connections>
                 </viewController>
