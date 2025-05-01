@@ -26,13 +26,13 @@ struct Course {
     var courseType: String
     
     var totalFunRank: [Double] = []
-    var numberOfFunRank: Double = 0.0
+    
     var totalDifficultyRank: [Double] = []
-    var numberOfDifficultyRank: Double = 0.0
+    
     var totalUsefulnessRank: [Double] = []
-    var numberOfUsefulnessRank: Double = 0.0
+    
     var totalWorkRank: [Double] = []
-    var numberOfWorkRank: Double = 0.0
+    
 }
 
 
