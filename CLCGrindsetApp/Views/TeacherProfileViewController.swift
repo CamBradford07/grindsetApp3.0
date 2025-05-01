@@ -11,7 +11,8 @@ class TeacherProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userOutlet.text = ""
+        userOutlet.text = "\(AppData.teachers[0].name)"
+        bioOutlet.text = "\(AppData.teachers[0].bio)"
         
     }
     
