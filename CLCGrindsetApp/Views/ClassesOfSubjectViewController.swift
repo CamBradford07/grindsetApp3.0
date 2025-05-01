@@ -11,7 +11,7 @@ class classClicked: UITableViewCell{
     static var cclass: Course = Course(courseID: "",courseName: "",credits: "",subject: "",term: "",eligibleGrades: "",prerequisite: "",corequisite: "",enrollmentNotes: "",description: "",isElective: "",courseType: ""
     )
     
-    static var selectedClass = ""
+    static var selectedClasses = [Course]()
 
 }
 
@@ -44,8 +44,8 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
         performSegue(withIdentifier: "seeDetails", sender: nil)
 //        performSegue(withIdentifier: "backToSchedule", sender: nil)
         print(currentSubjectClasses[indexPath.row].courseName)
-        classClicked.selectedClass = currentSubjectClasses[indexPath.row].courseName
-        AppData.studentSchedule[periodClicked.selectedPeriod - 1] = classClicked.selectedClass
+        //classClicked.selectedClass = currentSubjectClasses[indexPath.row].courseName
+        //AppData.studentSchedule[periodClicked.selectedPeriod - 1] = classClicked.selectedClass
         
     }
 }
