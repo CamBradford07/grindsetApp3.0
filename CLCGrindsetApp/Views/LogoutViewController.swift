@@ -13,6 +13,8 @@ class LogoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadCoursesFromCSV()
+        
         areYouLabel.text = "User logged in: \((AppData.currentStudent!).username!)\nAre You A..."
         
         self.navigationItem.hidesBackButton = true
