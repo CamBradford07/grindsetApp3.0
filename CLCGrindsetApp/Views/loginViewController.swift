@@ -72,10 +72,12 @@ class loginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func testAccount(_ sender: Any) {
+    
+    
+    @IBAction func testAction(_ sender: Any) {
         // this is an account i made before
-        let enteredUsername = "mrseavertotally"
-        let enteredPassword = "pony"
+        let enteredUsername = "TESTACCOUNT"
+        let enteredPassword = "Testing123"
         
         var userFound = false
         var userIndex = -1
