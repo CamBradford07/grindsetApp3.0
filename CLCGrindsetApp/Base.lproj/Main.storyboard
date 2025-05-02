@@ -1331,17 +1331,39 @@ apfmae</string>
             </objects>
             <point key="canvasLocation" x="4132.06106870229" y="-1287.323943661972"/>
         </scene>
-        <!--View Controller-->
+        <!--Teacher Specific Rank View Controller-->
         <scene sceneID="tIm-tc-1AS">
             <objects>
-                <viewController id="LZq-xh-BFL" sceneMemberID="viewController">
+                <viewController id="LZq-xh-BFL" customClass="TeacherSpecificRankViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywj-OU-ZnG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sY9-yO-WJW">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIE-Q7-rOi">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gBX-lB-ekj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gBX-lB-ekj" firstAttribute="bottom" secondItem="sY9-yO-WJW" secondAttribute="bottom" id="I2s-fH-00d"/>
+                            <constraint firstItem="sY9-yO-WJW" firstAttribute="top" secondItem="gBX-lB-ekj" secondAttribute="top" id="Jgb-Vz-yLV"/>
+                            <constraint firstItem="gBX-lB-ekj" firstAttribute="trailing" secondItem="sY9-yO-WJW" secondAttribute="trailing" id="MTj-bz-jKV"/>
+                            <constraint firstItem="sY9-yO-WJW" firstAttribute="leading" secondItem="gBX-lB-ekj" secondAttribute="leading" id="wg7-cp-H74"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iCv-Z8-htm"/>
+                    <connections>
+                        <outlet property="nameOutlet" destination="nIE-Q7-rOi" id="VV5-9W-iIr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdD-Eo-pmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

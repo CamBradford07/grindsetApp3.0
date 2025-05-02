@@ -9,9 +9,10 @@ import UIKit
 
 class TeacherSpecificRankViewController: UIViewController {
 
+    @IBOutlet weak var nameOutlet: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameOutlet.text = "\(AppData.teacherCourseClicked)"
         // Do any additional setup after loading the view.
     }
     
