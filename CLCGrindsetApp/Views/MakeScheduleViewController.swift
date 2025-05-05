@@ -47,6 +47,21 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let takingClass = UITableViewRowAction(style: .normal, title: "Taking Class") { (action, indexPath) in
+            // share item at indexPath
+            
+        }
+
+        takingClass.backgroundColor = UIColor.green
+
+        return [takingClass]
+        
+        // now only shows this one and not delete??
+    }
+    
+    
     
     // new copy
     
