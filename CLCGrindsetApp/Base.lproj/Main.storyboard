@@ -553,32 +553,35 @@ student or teacher?</string>
             </objects>
             <point key="canvasLocation" x="1525.9541984732823" y="708.45070422535218"/>
         </scene>
-        <!--View Controller-->
+        <!--Teaching Class View Controller-->
         <scene sceneID="Ibd-GZ-IBH">
             <objects>
-                <viewController id="DnF-uX-tZn" sceneMemberID="viewController">
+                <viewController id="DnF-uX-tZn" customClass="TeachingClassViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GvV-Xv-iNf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="y4z-xB-ceQ">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="y4z-xB-ceQ">
                                 <rect key="frame" x="30" y="162" width="333" height="622"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-Zd-eVq">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="172.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="174"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="53"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Paste Schoolinks Class ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IlL-e3-sWJ">
-                                        <rect key="frame" x="0.0" y="222.66666666666666" width="333" height="90.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="224" width="333" height="174"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dY-Mr-bqt">
-                                        <rect key="frame" x="0.0" y="363.33333333333337" width="333" height="258.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="448" width="333" height="174"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="DnF-uX-tZn" eventType="touchUpInside" id="nY0-m9-0t9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -597,6 +600,9 @@ student or teacher?</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LPZ-aM-fwl"/>
+                    <connections>
+                        <outlet property="idTextField" destination="IlL-e3-sWJ" id="tHy-7G-1Vp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvg-Lf-eph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
