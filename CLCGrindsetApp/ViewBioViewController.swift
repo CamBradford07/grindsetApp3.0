@@ -9,10 +9,19 @@ import UIKit
 
 class ViewBioViewController: UIViewController {
 
+    @IBOutlet weak var bioLabel: UILabel!
+    
+    @IBOutlet weak var teacherNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
+
+            // Do any additional setup after loading the view.
+            teacherNameLabel.text = AppData.teachers[0].name
+            bioLabel.text = AppData.teachers[0].bio
+            
+        }
     }
     
 
@@ -26,4 +35,4 @@ class ViewBioViewController: UIViewController {
     }
     */
 
-}
+

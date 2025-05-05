@@ -1612,6 +1612,10 @@ apfmae</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="K7o-dR-g65"/>
+                    <connections>
+                        <outlet property="BioLabel" destination="tpe-Gm-ahd" id="9m6-f5-KwE"/>
+                        <outlet property="teacherNameLabel" destination="IcU-Q6-XUX" id="VUF-6T-TnP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtB-KH-waY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
