@@ -6,6 +6,10 @@ class periodClicked {
     static var selectedPeriod = 0
 }
 
+class completedClasses{
+    static var completedClasses: [Course] = []
+}
+
 
 class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
