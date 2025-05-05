@@ -53,14 +53,20 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let takingClass = UITableViewRowAction(style: .normal, title: "Taking Class") { (action, indexPath) in
+        let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
             // share item at indexPath
             
         }
 
-        takingClass.backgroundColor = UIColor.green
-
-        return [takingClass]
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            // share item at indexPath
+            classClicked.selectedClasses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+        complete.backgroundColor = UIColor.green
+        delete.backgroundColor = UIColor.systemRed
+        return [delete,complete]
         
         // now only shows this one and not delete??
     }
