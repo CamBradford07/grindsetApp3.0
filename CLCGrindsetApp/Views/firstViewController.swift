@@ -15,6 +15,7 @@ class firstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // this code will check if the account already exists. should probably reorganize students into AppData, but i dont have enough time to make that work
+       
         AppData.ref = Firestore.firestore().collection("data").document("Accounts")
         
         AppData.ref.addSnapshotListener { documentSnapshot, error in

@@ -1,18 +1,17 @@
 //
-//  StudentMenuViewController.swift
+//  ViewBioViewController.swift
 //  CLCGrindsetApp
 //
-//  Created by EVANGELINE NOFTZ on 4/17/25.
+//  Created by EVAN MEYER on 5/4/25.
 //
 
 import UIKit
 
-class StudentMenuViewController: UIViewController {
+class ViewBioViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        classesTaken = allCourses
+
         // Do any additional setup after loading the view.
     }
     
