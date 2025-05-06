@@ -102,7 +102,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="622"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectsCell" id="gxh-TP-4Vc" customClass="CompletedCell">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completedCell" id="gxh-TP-4Vc" customClass="CompletedClassesCell">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gxh-TP-4Vc" id="qQI-i7-dC0">
@@ -1736,7 +1736,7 @@ apfmae</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xvz-3U-hHH"/>
+        <segue reference="dK8-iy-X4R"/>
         <segue reference="jLn-Ph-ixY"/>
     </inferredMetricsTieBreakers>
     <resources>
