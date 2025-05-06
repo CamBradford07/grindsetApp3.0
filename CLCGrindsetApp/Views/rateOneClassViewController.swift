@@ -39,7 +39,7 @@ class rateOneClassViewController: UIViewController{
     
     @IBAction func buttonAction(_ sender: UIButton) {
         
-        let fun = 
+    
         
         self.navigationController?.popViewController(animated: true)
         
@@ -76,6 +76,9 @@ class rateOneClassViewController: UIViewController{
             }
         }
         AppData.courseToRate?.totalFunRank.append(Double(selectedIndex))
+        
+        allRanks[AppData.indexOfRate].totalFunRank.append(Double(selectedIndex))
+        
     }
     
    
