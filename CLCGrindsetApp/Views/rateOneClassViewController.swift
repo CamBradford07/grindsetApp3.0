@@ -21,7 +21,10 @@ class rateOneClassViewController: UIViewController{
     
     @IBOutlet weak var titleOutletOneRate: UILabel!
     
-    
+    var fun : Int?
+    var dif : Int?
+    var use : Int?
+    var work : Int?
     
     override func viewDidLoad() {
         
@@ -39,7 +42,10 @@ class rateOneClassViewController: UIViewController{
     
     @IBAction func buttonAction(_ sender: UIButton) {
         
-    
+        AppData.currentStudent.rankToBeSaved.totalFunRank.append(Double(fun ?? 0))
+        AppData.currentStudent.rankToBeSaved.totalDifficultyRank.append(Double(dif ?? 0))
+        AppData.currentStudent.rankToBeSaved.totalWorkRank.append(Double(work ?? 0))
+        AppData.currentStudent.rankToBeSaved.totalUsefulnessRank.append(Double(use ?? 0))
         
         self.navigationController?.popViewController(animated: true)
         
@@ -60,7 +66,7 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        AppData.courseToRate?.totalDifficultyRank.append(Double(selectedIndex))
+        dif = selectedIndex
     }
     
     
@@ -75,9 +81,7 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        AppData.courseToRate?.totalFunRank.append(Double(selectedIndex))
-        
-        allRanks[AppData.indexOfRate].totalFunRank.append(Double(selectedIndex))
+        fun = selectedIndex
         
     }
     
@@ -93,7 +97,7 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        AppData.courseToRate?.totalUsefulnessRank.append(Double(selectedIndex))
+        use = selectedIndex
     }
     
     
@@ -109,7 +113,7 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        AppData.courseToRate?.totalWorkRank.append(Double(selectedIndex))
+        work = selectedIndex
     }
     
     
