@@ -26,8 +26,8 @@ class CompletedClassesViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedCell", for: indexPath) as! CreateScheduleCell
-        cell.classLabel.text = classClicked.selectedClasses[indexPath.row].courseName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "completedCell", for: indexPath)
+        cell.textLabel?.text = completedClasses.completedClasses[indexPath.row].courseName
         return cell
     }
 
