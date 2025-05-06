@@ -13,6 +13,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableViewOutlet: UITableView!
     
+    @IBOutlet weak var textArea: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
