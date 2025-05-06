@@ -15,6 +15,7 @@ class AppData{
     
     static var courseToRate: Course?
     static var teacherCourseClicked: Course?
+    static var indexOfRate = -1
     
     static var studentSchedule = ["No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected"]
     

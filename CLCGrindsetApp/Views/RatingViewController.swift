@@ -39,6 +39,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         AppData.courseToRate = classesTaken[indexPath.row]
+        AppData.indexOfRate = indexPath.row
         performSegue(withIdentifier: "toRateOne", sender: self)
     }
     /*
