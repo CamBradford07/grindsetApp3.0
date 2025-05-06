@@ -22,6 +22,7 @@ class AppData{
     static var rateIndex = -1
     
     static var ref: DocumentReference!
+    static var rankRef: DocumentReference!
     static var usernames = [String]()
     static var passwords = [String]()
     static var students = [Student]()
