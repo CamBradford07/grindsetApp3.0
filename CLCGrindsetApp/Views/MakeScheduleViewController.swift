@@ -7,6 +7,8 @@ class periodClicked {
 }
 
 
+
+
 class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -49,14 +51,23 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let takingClass = UITableViewRowAction(style: .normal, title: "Taking Class") { (action, indexPath) in
+        let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
+            var swipedCourse = allCourses.first(where: {$0.courseName.contains(classClicked.selectedClasses[indexPath.row].courseName)})! //chatgpt help
+            completedClasses.completedClasses.append(swipedCourse)
+            classClicked.selectedClasses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            }
+
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             // share item at indexPath
+            classClicked.selectedClasses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             
         }
-
-        takingClass.backgroundColor = UIColor.green
-
-        return [takingClass]
+        complete.backgroundColor = UIColor.green
+        delete.backgroundColor = UIColor.systemRed
+        return [delete,complete]
         
         // now only shows this one and not delete??
     }
