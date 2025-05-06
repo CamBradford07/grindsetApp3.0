@@ -24,12 +24,12 @@ class TeacherViewRankingsViewController: UIViewController, UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        allCourses.count
+        AppData.currentStudent.selectedClasses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeacherRateCell", for: indexPath)
-        cell.textLabel?.text = allCourses[indexPath.row].courseName
+        cell.textLabel?.text = getCourseByID(id: AppData.currentStudent.selectedClasses[indexPath.row])?.courseName
         return cell
         
         
@@ -37,7 +37,7 @@ class TeacherViewRankingsViewController: UIViewController, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        AppData.teacherCourseClicked = allCourses[indexPath.row]
+        AppData.teacherCourseClicked = getCourseByID(id: AppData.currentStudent.selectedClasses[indexPath.row])
         performSegue(withIdentifier: "toRankSpecific", sender: self)
         
     }
