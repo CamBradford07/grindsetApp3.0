@@ -16,7 +16,7 @@ class Student{
     var name: String!
     var age: Int!
     var takenClasses: [String]!
-    var ranksToBeSaved: [Rank]!
+    var rankToBeSaved: Rank!
     var bio: String!
     
     init(username: String!, password: String!, gradeLevel: Int!, selectedClasses: [String]!, name: String!, age: Int!, takenClasses: [String]!) {
@@ -27,7 +27,7 @@ class Student{
         self.name = name
         self.age = age
         self.takenClasses = takenClasses
-        self.ranksToBeSaved = [Rank]()
+        self.rankToBeSaved = Rank()
     }
     
     init(dict: [String : Any]){
@@ -61,10 +61,10 @@ class Student{
             self.takenClasses = [String]()
         }
         if let hi = dict["Ranks"] as? Data{
-            if let decoded = try? JSONDecoder().decode([Rank].self, from: hi){
-                self.ranksToBeSaved = decoded
+            if let decoded = try? JSONDecoder().decode(Rank.self, from: hi){
+                self.rankToBeSaved = decoded
             }else{
-                self.ranksToBeSaved = [Rank]()
+                self.rankToBeSaved = Rank()
             }
         }
         
@@ -72,7 +72,7 @@ class Student{
     
     func addToFirebase(docRef: DocumentReference){
         var rankInfo: Data?
-        if let encoded = try? JSONEncoder().encode(ranksToBeSaved){
+        if let encoded = try? JSONEncoder().encode(rankToBeSaved){
             rankInfo = encoded
         }
         
@@ -83,7 +83,7 @@ class Student{
     
     func saveChanges(docRef: DocumentReference){
         var rankInfo: Data?
-        if let encoded = try? JSONEncoder().encode(ranksToBeSaved){
+        if let encoded = try? JSONEncoder().encode(rankToBeSaved){
             rankInfo = encoded
         }
         let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!, "Ranks":rankInfo!] as! [String : Any]
