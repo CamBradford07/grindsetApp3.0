@@ -16,6 +16,7 @@ class Student{
     var name: String!
     var age: Int!
     var takenClasses: [String]!
+    var ranksToBeSaved: [Rank]!
     
     init(username: String!, password: String!, gradeLevel: Int!, selectedClasses: [String]!, name: String!, age: Int!, takenClasses: [String]!) {
         self.username = username
@@ -25,6 +26,7 @@ class Student{
         self.name = name
         self.age = age
         self.takenClasses = takenClasses
+        self.ranksToBeSaved = [Rank]()
     }
     
     init(dict: [String : Any]){
@@ -54,17 +56,36 @@ class Student{
         else{self.age = 0}
         if let takenClasses = dict["TakenClasses"] as? [String]{
             self.takenClasses = takenClasses
+        }else{
+            self.takenClasses = [String]()
         }
+        if let hi = dict["Ranks"] as? Data{
+            if let decoded = try? JSONDecoder().decode([Rank].self, from: hi){
+                self.ranksToBeSaved = decoded
+            }else{
+                self.ranksToBeSaved = [Rank]()
+            }
+        }
+        
     }
     
     func addToFirebase(docRef: DocumentReference){
-        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!] as! [String : Any]
+        var rankInfo: Data?
+        if let encoded = try? JSONEncoder().encode(ranksToBeSaved){
+            rankInfo = encoded
+        }
+        
+        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!, "Ranks":rankInfo!] as! [String : Any]
         let uploadableStud = [username : informationDict] as! [String : Any]
         docRef.setData(uploadableStud, merge: true)
     }
     
     func saveChanges(docRef: DocumentReference){
-        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!] as! [String : Any]
+        var rankInfo: Data?
+        if let encoded = try? JSONEncoder().encode(ranksToBeSaved){
+            rankInfo = encoded
+        }
+        let informationDict = ["Username" : username!, "Password" : password!, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "Name" : name!, "Age" : age!, "TakenClasses" : takenClasses!, "Ranks":rankInfo!] as! [String : Any]
         let uploadableStud = [username : informationDict] as! [String : Any]
         docRef.updateData(uploadableStud)
     }
