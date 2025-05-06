@@ -560,7 +560,7 @@
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hZQ-0y-Blz"/>
-                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="010-lg-j3w"/>
                     <connections>
@@ -584,7 +584,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-Zd-eVq">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="205"/>
-                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="53"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -596,7 +596,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dY-Mr-bqt">
                                         <rect key="frame" x="0.0" y="510" width="333" height="205"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Enter">
+                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                            <color key="baseBackgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="evanAction:" destination="DnF-uX-tZn" eventType="touchUpInside" id="S5n-5K-91k"/>
                                         </connections>
@@ -758,7 +761,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qqj-dQ-T8F"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bKP-e0-n92" secondAttribute="bottom" id="CkB-93-s0R"/>
                             <constraint firstItem="bKP-e0-n92" firstAttribute="top" secondItem="Qqj-dQ-T8F" secondAttribute="top" id="Okc-I7-EmI"/>
@@ -800,7 +803,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pWj-f5-gIi"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
                             <constraint firstItem="pWj-f5-gIi" firstAttribute="bottom" secondItem="NM9-C6-TUo" secondAttribute="bottom" constant="100" id="3qF-8a-14O"/>
                             <constraint firstItem="NM9-C6-TUo" firstAttribute="top" secondItem="Aue-4V-iX7" secondAttribute="top" constant="100" id="J21-4Z-kbO"/>
@@ -1016,7 +1019,7 @@ apfmae</string>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rEk-rI-Ckl"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
                             <constraint firstItem="rEk-rI-Ckl" firstAttribute="bottom" secondItem="0IK-S0-PCF" secondAttribute="bottom" constant="100" id="Bbd-iH-Pdf"/>
                             <constraint firstItem="rEk-rI-Ckl" firstAttribute="trailing" secondItem="0IK-S0-PCF" secondAttribute="trailing" id="dVc-Qi-J5e"/>
@@ -1582,7 +1585,7 @@ apfmae</string>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5fQ-lm-tax"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
                             <constraint firstItem="5fQ-lm-tax" firstAttribute="trailing" secondItem="vkU-el-DMp" secondAttribute="trailing" id="4Hl-qI-SnK"/>
                             <constraint firstItem="vkU-el-DMp" firstAttribute="leading" secondItem="5fQ-lm-tax" secondAttribute="leading" id="mUr-R9-XWW"/>
@@ -1637,7 +1640,7 @@ apfmae</string>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3tl-4f-kGR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="K7o-dR-g65"/>
                     <connections>
@@ -1662,7 +1665,7 @@ apfmae</string>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-UZ-pCz">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="71.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1670,7 +1673,8 @@ apfmae</string>
                                         <rect key="frame" x="0.0" y="71.666666666666657" width="393" height="71.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add a Class">
-                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                            <color key="baseBackgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="bw6-oz-Qev" kind="show" id="aFz-wu-V1u"/>
@@ -1735,7 +1739,7 @@ apfmae</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NVJ-nc-Hei"/>
+        <segue reference="dK8-iy-X4R"/>
         <segue reference="jLn-Ph-ixY"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1748,23 +1752,14 @@ apfmae</string>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
