@@ -11,6 +11,15 @@ var allCourses: [Course] = []
 var filteredCourses: [Course] = []
 var classesTaken: [Course] = []
 
+func getCourseByID(id: String) -> Course? {
+    for course in allCourses {
+        if course.courseID == id {
+            return course
+        }
+    }
+    
+    return nil
+}
 struct Course {
     var courseID: String
     var courseName: String
