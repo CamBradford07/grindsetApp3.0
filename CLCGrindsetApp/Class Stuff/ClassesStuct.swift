@@ -20,7 +20,7 @@ func getCourseByID(id: String) -> Course? {
     
     return nil
 }
-struct Course {
+struct Course: Equatable {
     var courseID: String
     var courseName: String
     var credits: String
