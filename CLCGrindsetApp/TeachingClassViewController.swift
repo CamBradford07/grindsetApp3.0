@@ -18,9 +18,21 @@ class TeachingClassViewController: UIViewController {
     
 
     @IBAction func submitAction(_ sender: Any) {
+        var selectedCourseID = "blegh"
+        
+        let inputID = idTextField.text!
         for course in allCourses {
-            
+            if course.courseID == inputID {
+                selectedCourseID = course.courseID
+                break
+            }
         }
+        
+         if selectedCourseID == "blegh"
+        {
+             return
+        }
+        AppData.currentStudent.selectedClasses.append(selectedCourseID)
     }
     /*
     // MARK: - Navigation

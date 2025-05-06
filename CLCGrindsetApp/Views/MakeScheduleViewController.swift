@@ -7,6 +7,8 @@ class periodClicked {
 }
 
 
+
+
 class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -50,9 +52,12 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
-            // share item at indexPath
+            var swipedCourse = allCourses.first(where: {$0.courseName.contains(classClicked.selectedClasses[indexPath.row].courseName)})! //chatgpt help
+            completedClasses.completedClasses.append(swipedCourse)
+            classClicked.selectedClasses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             
-        }
+            }
 
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             // share item at indexPath

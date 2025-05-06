@@ -17,6 +17,7 @@ class Student{
     var age: Int!
     var takenClasses: [String]!
     var ranksToBeSaved: [Rank]!
+    var bio: String!
     
     init(username: String!, password: String!, gradeLevel: Int!, selectedClasses: [String]!, name: String!, age: Int!, takenClasses: [String]!) {
         self.username = username
