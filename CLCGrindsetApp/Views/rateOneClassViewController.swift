@@ -46,19 +46,6 @@ class rateOneClassViewController: UIViewController{
     }
     
     
-    @IBAction func funSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
-        
-        for i in 0...selectedIndex{
-            sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
-        }
-        if selectedIndex != 4{
-            for i in selectedIndex+1...4{
-                sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
-            }
-        }
-        AppData.courseToRate?.totalFunRank.append(Double(selectedIndex))
-    }
     
     
     
@@ -74,6 +61,21 @@ class rateOneClassViewController: UIViewController{
             }
         }
         AppData.courseToRate?.totalDifficultyRank.append(Double(selectedIndex))
+    }
+    
+    
+    @IBAction func FunnSC(_ sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        
+        for i in 0...selectedIndex{
+            sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
+        }
+        if selectedIndex != 4{
+            for i in selectedIndex+1...4{
+                sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
+            }
+        }
+        AppData.courseToRate?.totalFunRank.append(Double(selectedIndex))
     }
     
    
