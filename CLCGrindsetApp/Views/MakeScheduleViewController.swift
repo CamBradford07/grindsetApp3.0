@@ -53,6 +53,18 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         
         let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
             var swipedCourse = allCourses.first(where: {$0.courseName.contains(classClicked.selectedClasses[indexPath.row].courseName)})! //chatgpt help
+            
+            
+            // FIX THIS STUFF -Eva
+            var subjectIndex = GradArrays.classes.firstIndex(of: swipedCourse.subject)
+            print(swipedCourse.subject)
+            print("subject index \(subjectIndex)")
+            
+            
+            
+            
+            
+            
             completedClasses.completedClasses.append(swipedCourse)
             classClicked.selectedClasses.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
