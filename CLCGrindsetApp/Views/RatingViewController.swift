@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
   
     
 
@@ -15,31 +15,65 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var textArea: UITextField!
     
+    var searchTerm = ""
+    
+    var conformingCourses = [Course]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
         
+        textArea.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        searchTerm = textArea.text!.lowercased()
+        
+        conformingCourses = [Course]()
+        
+        for course in classesTaken {
+            if course.courseName.lowercased().contains(searchTerm) {
+                conformingCourses.append(course)
+            }
+        }
+        
+        tableViewOutlet.reloadData()
+        return true
+    }
 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        classesTaken.count
+        if searchTerm == ""
+        {
+            return classesTaken.count
+        } else {
+            return conformingCourses.count
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        cell.textLabel?.text = allCourses[indexPath.row].courseName
+        if searchTerm == "" {
+            cell.textLabel?.text = allCourses[indexPath.row].courseName
+        } else {
+            cell.textLabel?.text = conformingCourses[indexPath.row].courseName
+        }
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        AppData.courseToRate = classesTaken[indexPath.row]
+        if searchTerm == "" {
+            AppData.courseToRate = classesTaken[indexPath.row]
+        } else {
+            AppData.courseToRate = conformingCourses[indexPath.row]
+        }
         AppData.indexOfRate = indexPath.row
         performSegue(withIdentifier: "toRateOne", sender: self)
     }

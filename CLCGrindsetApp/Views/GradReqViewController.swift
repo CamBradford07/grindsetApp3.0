@@ -7,12 +7,19 @@
 
 import UIKit
 
+class GradArrays {
+    static var classes = ["English", "Math", "Science", "Computer Science", "Driver's Education", "Consumer Ed", "PE / Gym", "Social Science", "Elective"]
+    
+    static var creditReqs = [4.0, 3.0, 2.0, 1.0, 0.5, 0.25, 2.25, 2.0, 4.0]
+    
+    static var totalCreditReq = 20.25
+}
 class GradReqViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var reqTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        classes.count
+        GradArrays.classes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -20,7 +27,7 @@ class GradReqViewController: UIViewController, UITableViewDataSource, UITableVie
         
         var cell = reqTableView.dequeueReusableCell(withIdentifier: "ReqCell") as! ReqCell
         
-        cell.customize(name: classes[index], creditText: "\(creditReqs[index]) credits required")
+        cell.customize(name: GradArrays.classes[index], creditText: "\(GradArrays.creditReqs[index]) credits required")
         
         return cell
     }
@@ -31,11 +38,11 @@ class GradReqViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
 
-    let classes = ["English", "Mathematics", "Science", "Computer science", "Drivers Ed", "Consumer Ed", "PE / Gym", "Social Science", "Electives"]
+    //let classes = ["English", "Mathematics", "Science", "Computer science", "Drivers Ed", "Consumer Ed", "PE / Gym", "Social Science", "Electives"]
     
-    let totalCreditReq = 20.25
+    //let totalCreditReq = 20.25
     
-    let creditReqs = [4.0, 3.0, 2.0, 1.0, 0.5, 0.25, 2.25, 2.0, 4.0]
+    //let creditReqs = [4.0, 3.0, 2.0, 1.0, 0.5, 0.25, 2.25, 2.0, 4.0]
     override func viewDidLoad() {
         super.viewDidLoad()
         

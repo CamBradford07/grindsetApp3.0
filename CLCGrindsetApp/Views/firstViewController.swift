@@ -28,16 +28,15 @@ class firstViewController: UIViewController {
                   return
                 }
             
-            AppData.usernames.removeAll()
-            AppData.passwords.removeAll()
+            AppData.ids.removeAll()
             AppData.students.removeAll()
             
             for key in data.keys{
+                AppData.ids.append(key)
                     let dataArray = data[key] as! [String : Any]
                     let uncodedAccount = Student(dict: dataArray)
                 AppData.students.append(uncodedAccount)
-                AppData.usernames.append(uncodedAccount.username)
-                AppData.passwords.append(uncodedAccount.password)
+                
             }
             
             
@@ -49,39 +48,25 @@ class firstViewController: UIViewController {
     
     @IBAction func lockInAction(_ sender: Any) {
         //
-        let enteredUsername = UserDefaults.standard.string(forKey: "username") ?? ""
-        let enteredPassword = UserDefaults.standard.string(forKey: "password") ?? ""
+        let enteredID = UserDefaults.standard.string(forKey: "ID") ?? ""
+        
         
         var userFound = false
         var userIndex = -1
-        for username in AppData.usernames{
-            if enteredUsername.lowercased() == username.lowercased(){
+        for id in AppData.ids{
+            if enteredID.lowercased() == id.lowercased(){
                 userFound = true
-                userIndex = AppData.usernames.firstIndex(of: username) ?? -1
+                userIndex = AppData.ids.firstIndex(of: id) ?? -1
                 break
             }
         }
         
         if userFound && userIndex != -1{
-            if enteredPassword == AppData.passwords[userIndex]{
                 AppData.currentStudent = AppData.students[userIndex]
                 performSegue(withIdentifier: "skipLogin", sender: self)
             }else{
                 performSegue(withIdentifier: "toLogin", sender: self)
             }
-        }else{
-            performSegue(withIdentifier: "toLogin", sender: self)
-        }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
