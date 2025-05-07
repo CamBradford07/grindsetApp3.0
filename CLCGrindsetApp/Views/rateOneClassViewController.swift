@@ -21,10 +21,10 @@ class rateOneClassViewController: UIViewController{
     
     @IBOutlet weak var titleOutletOneRate: UILabel!
     
-    var fun : Int?
-    var dif : Int?
-    var use : Int?
-    var work : Int?
+    var fun : Double?
+    var dif : Double?
+    var use : Double?
+    var work : Double?
     
     override func viewDidLoad() {
         
@@ -42,10 +42,13 @@ class rateOneClassViewController: UIViewController{
     
     @IBAction func buttonAction(_ sender: UIButton) {
         
-        AppData.currentStudent.rankToBeSaved.totalFunRank.append(Double(fun ?? 0))
-        AppData.currentStudent.rankToBeSaved.totalDifficultyRank.append(Double(dif ?? 0))
-        AppData.currentStudent.rankToBeSaved.totalWorkRank.append(Double(work ?? 0))
-        AppData.currentStudent.rankToBeSaved.totalUsefulnessRank.append(Double(use ?? 0))
+        allRanks[AppData.rateIndex].totalDifficultyRank.append(dif ?? 1.0)
+        
+        allRanks[AppData.rateIndex].totalFunRank.append(fun ?? 1.0)
+        
+        allRanks[AppData.rateIndex].totalWorkRank.append(work ?? 1.0)
+        
+        allRanks[AppData.rateIndex].totalUsefulnessRank.append(fun ?? 1.0)
         
         self.navigationController?.popViewController(animated: true)
         
