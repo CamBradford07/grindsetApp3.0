@@ -28,6 +28,9 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
         currentSubjectClasses.removeAll { i in
             completedClasses.completedClasses.contains(i)
         } //chat help
+        currentSubjectClasses.removeAll { i in
+            classClicked.selectedClasses.contains(i)
+        }
         tableView.reloadData()
         
         
