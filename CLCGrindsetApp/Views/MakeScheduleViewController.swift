@@ -91,6 +91,16 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         // now only shows this one and not delete??
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true  // or your own condition
+    } //chat gave me function
+    
+    func tableView(_ tableView: UITableView,
+                   moveRowAt sourceIndexPath: IndexPath,
+                   to destinationIndexPath: IndexPath) {
+        let movedObject = classClicked.selectedClasses.remove(at: sourceIndexPath.row)
+        classClicked.selectedClasses.insert(movedObject, at: destinationIndexPath.row)
+    } //chat gave me function
     
     
     // new copy
