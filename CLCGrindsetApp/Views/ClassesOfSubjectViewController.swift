@@ -22,13 +22,15 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentSubjectClasses = allCourses.filter { $0.subject == subjectClicked.subject }
-        currentSubjectClasses.removeAll { course in
-            completedClasses.completedClasses.contains(course)
-        } //chat help
         tableView.dataSource = self
         tableView.delegate = self
+        currentSubjectClasses = allCourses.filter { $0.subject == subjectClicked.subject }
+        currentSubjectClasses.removeAll { i in
+            completedClasses.completedClasses.contains(i)
+        } //chat help
         tableView.reloadData()
+        
+        
 
                 
     }

@@ -14,6 +14,7 @@ class ClassDetailViewController: UIViewController  {
     @IBOutlet weak var creditLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var addButton: UIButton!
     
 
 
@@ -21,10 +22,17 @@ class ClassDetailViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = classClicked.cclass.courseName
-        subjectLabel.text = classClicked.cclass.subject
-        creditLabel.text = classClicked.cclass.credits
+        subjectLabel.text = "Subject: \(classClicked.cclass.subject)"
+        creditLabel.text = "Credits: \(classClicked.cclass.credits)"
         gradeLabel.text = "\(classClicked.cclass.eligibleGrades)"
         textView.text = "•Required Classes: \(classClicked.cclass.prerequisite)\n•\(classClicked.cclass.term)\n•Description \(classClicked.cclass.description)\n•Notes: \(classClicked.cclass.enrollmentNotes)"
+        
+        if CompletedClassesViewController.noShowButton{
+            addButton.isHidden = true
+        } else {
+            addButton.isHidden = false
+        }
+        
     }
     @IBAction func addToSchedule(_ sender: Any) {
         classClicked.selectedClasses.append(classClicked.cclass)
