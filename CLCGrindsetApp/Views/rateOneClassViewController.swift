@@ -59,7 +59,7 @@ class rateOneClassViewController: UIViewController{
     
     
     @IBAction func difSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -69,12 +69,13 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        dif = selectedIndex
+        selectedIndex += 1
+        dif = Double(selectedIndex)
     }
     
     
     @IBAction func FunnSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -84,13 +85,13 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        fun = selectedIndex
-        
+        selectedIndex += 1
+        fun = Double(selectedIndex)
     }
     
    
     @IBAction func useSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -100,13 +101,14 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        use = selectedIndex
+        selectedIndex += 1
+        use = Double(selectedIndex)
     }
     
     
     
     @IBAction func workSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -116,7 +118,8 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        work = selectedIndex
+        selectedIndex += 1
+        work = Double(selectedIndex)
     }
     
     
