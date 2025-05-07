@@ -411,112 +411,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Rate ____" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHy-Oy-LqD">
-                                <rect key="frame" x="16" y="63" width="361" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ3-QJ-aGW">
-                                <rect key="frame" x="16" y="122" width="204" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-uo-iP0">
-                                <rect key="frame" x="16" y="246" width="204" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-bT-niq">
-                                <rect key="frame" x="16" y="300" width="317" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                </segments>
-                                <connections>
-                                    <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="490-Zg-uug"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Usefulness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHI-WI-qlg">
-                                <rect key="frame" x="16" y="384" width="204" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgo-nY-eJd">
-                                <rect key="frame" x="16" y="438" width="317" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                </segments>
-                                <connections>
-                                    <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="t5a-t0-w3v"/>
-                                    <action selector="useSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="onw-fh-Rva"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RE-Fp-tZ6">
-                                <rect key="frame" x="60" y="701" width="273" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
-                                <connections>
-                                    <action selector="buttonAction:" destination="dMh-kL-sgi" eventType="touchUpInside" id="hRp-6H-d3P"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="work load" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-Xf-pxu">
-                                <rect key="frame" x="16" y="508" width="204" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Bx-fr-oXx">
-                                <rect key="frame" x="16" y="562" width="317" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                </segments>
-                                <connections>
-                                    <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="hyl-P3-IK9"/>
-                                    <action selector="useSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="psi-LL-qM5"/>
-                                    <action selector="workSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="cx9-pX-0Oz"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-JE-OFh">
-                                <rect key="frame" x="16" y="178" width="317" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                    <segment title="" image="star" catalog="system"/>
-                                </segments>
-                                <connections>
-                                    <action selector="FunnSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="ynU-29-Ggq"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aIS-cu-kWk">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Rate ____" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHy-Oy-LqD">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="71.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ3-QJ-aGW">
+                                        <rect key="frame" x="0.0" y="71.666666666666657" width="393" height="71.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-JE-OFh">
+                                        <rect key="frame" x="0.0" y="143" width="393" height="72.666666666666686"/>
+                                        <segments>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="FunnSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="ynU-29-Ggq"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-uo-iP0">
+                                        <rect key="frame" x="0.0" y="214.66666666666669" width="393" height="71.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-bT-niq">
+                                        <rect key="frame" x="0.0" y="286" width="393" height="72.666666666666686"/>
+                                        <segments>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="490-Zg-uug"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usefulness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHI-WI-qlg">
+                                        <rect key="frame" x="0.0" y="357.66666666666669" width="393" height="71.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgo-nY-eJd">
+                                        <rect key="frame" x="0.0" y="429" width="393" height="72.666666666666686"/>
+                                        <segments>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="t5a-t0-w3v"/>
+                                            <action selector="useSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="onw-fh-Rva"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Load" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-Xf-pxu">
+                                        <rect key="frame" x="0.0" y="500.66666666666657" width="393" height="71.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Bx-fr-oXx">
+                                        <rect key="frame" x="0.0" y="572" width="393" height="72.666666666666629"/>
+                                        <segments>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star" catalog="system"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="hyl-P3-IK9"/>
+                                            <action selector="useSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="psi-LL-qM5"/>
+                                            <action selector="workSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="cx9-pX-0Oz"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RE-Fp-tZ6">
+                                        <rect key="frame" x="0.0" y="643.66666666666663" width="393" height="71.333333333333371"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Submit"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                            <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                            <color key="baseBackgroundColor" red="0.21835161280000001" green="0.48806973889999999" blue="0.47012937890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonAction:" destination="dMh-kL-sgi" eventType="touchUpInside" id="hRp-6H-d3P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CHy-Oy-LqD" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="Etv-oo-d1d"/>
+                                    <constraint firstItem="5LW-uo-iP0" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="Qap-iM-5JM"/>
+                                    <constraint firstItem="Sgo-nY-eJd" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="SaK-jZ-F5k"/>
+                                    <constraint firstItem="jQc-bT-niq" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="Wcc-0C-7eL"/>
+                                    <constraint firstItem="Iuv-JE-OFh" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="dQP-h6-tPf"/>
+                                    <constraint firstItem="jmH-Xf-pxu" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="dQf-L8-pCH"/>
+                                    <constraint firstItem="7RE-Fp-tZ6" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="i1n-Pg-nwO"/>
+                                    <constraint firstItem="yHI-WI-qlg" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="oYu-qQ-FPh"/>
+                                    <constraint firstItem="2Bx-fr-oXx" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="xTS-K3-pX6"/>
+                                    <constraint firstItem="AZ3-QJ-aGW" firstAttribute="height" secondItem="aIS-cu-kWk" secondAttribute="height" multiplier="0.1" id="zWx-hQ-C4C"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hZQ-0y-Blz"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="hZQ-0y-Blz" firstAttribute="trailing" secondItem="aIS-cu-kWk" secondAttribute="trailing" id="JS6-oe-Qhk"/>
+                            <constraint firstItem="aIS-cu-kWk" firstAttribute="top" secondItem="hZQ-0y-Blz" secondAttribute="top" id="Qla-Q1-wuT"/>
+                            <constraint firstItem="hZQ-0y-Blz" firstAttribute="bottom" secondItem="aIS-cu-kWk" secondAttribute="bottom" id="aQV-vU-qG9"/>
+                            <constraint firstItem="aIS-cu-kWk" firstAttribute="leading" secondItem="hZQ-0y-Blz" secondAttribute="leading" id="b2Z-dQ-6m8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="010-lg-j3w"/>
                     <connections>
@@ -1150,7 +1167,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="OuH-IK-Aap" customClass="ClassCell" customModule="Overflowv2" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="OuH-IK-Aap" customClass="ClassCell" customModule="CLCGrindsetApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="69"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OuH-IK-Aap" id="5p7-uz-3HV">
@@ -1608,7 +1625,7 @@ apfmae</string>
                                         <rect key="frame" x="0.0" y="143" width="393" height="572"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="SAy-1r-3i4" customClass="ClassCell" customModule="Overflowv2" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="SAy-1r-3i4" customClass="ClassCell" customModule="CLCGrindsetApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="69"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SAy-1r-3i4" id="tbA-nD-AbO">
@@ -1703,7 +1720,7 @@ apfmae</string>
                                 <rect key="frame" x="0.0" y="100" width="393" height="618"/>
                                 <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="pyB-VE-jOU" customClass="ClassCell" customModule="Overflowv2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="pyB-VE-jOU" customClass="ClassCell" customModule="CLCGrindsetApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pyB-VE-jOU" id="tMV-W8-rvo">
