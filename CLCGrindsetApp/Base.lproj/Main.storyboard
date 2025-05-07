@@ -668,7 +668,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BYy-sV-x4g">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="x8K-AL-l16">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RpX-G3-MAP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RpX-G3-MAP">
                                 <rect key="frame" x="265.33333333333331" y="5" width="111.66666666666669" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -1153,7 +1153,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K7o-dR-g65"/>
                     <connections>
-                        <outlet property="BioLabel" destination="tpe-Gm-ahd" id="9m6-f5-KwE"/>
+                        <outlet property="bioLabel" destination="tpe-Gm-ahd" id="6JA-OM-bbz"/>
                         <outlet property="teacherNameLabel" destination="IcU-Q6-XUX" id="VUF-6T-TnP"/>
                     </connections>
                 </viewController>
@@ -1343,7 +1343,7 @@ apfmae</string>
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="hfb-Jw-dLu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lK4-Wr-hIX">
-                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <rect key="frame" x="265.33333333333331" y="5" width="111.66666666666669" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right" catalog="system" imagePlacement="trailing" title="Logout "/>
