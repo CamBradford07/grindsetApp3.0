@@ -54,11 +54,17 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
             var swipedCourse = allCourses.first(where: {$0.courseName.contains(classClicked.selectedClasses[indexPath.row].courseName)})! //chatgpt help
             
+            /*static var classes = ["English", "Mathematics", "Science", "Computer Science", "Driver's Education", "Consumer Ed", "PE / Gym", "Social Science", "Elective"]
+            
+            static var creditReqs = [4.0, 3.0, 2.0, 1.0, 0.5, 0.25, 2.25, 2.0, 4.0]*/
             
             // FIX THIS STUFF -Eva
-            var subjectIndex = GradArrays.classes.firstIndex(of: swipedCourse.subject)
+            var subjectIndex = GradArrays.classes.firstIndex(of: swipedCourse.subject)!
             print(swipedCourse.subject)
             print("subject index \(subjectIndex)")
+            print("credits \(swipedCourse.credits)")
+            GradArrays.creditReqs[subjectIndex] -= Double(swipedCourse.credits)!
+            GradArrays.totalCreditReq -= Double(swipedCourse.credits)!
             
             
             

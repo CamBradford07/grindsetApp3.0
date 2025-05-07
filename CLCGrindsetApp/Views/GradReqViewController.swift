@@ -8,7 +8,7 @@
 import UIKit
 
 class GradArrays {
-    static var classes = ["English", "Mathematics", "Science", "Computer science", "Drivers Ed", "Consumer Ed", "PE / Gym", "Social Science", "Electives"]
+    static var classes = ["English", "Math", "Science", "Computer Science", "Driver's Education", "Consumer Ed", "PE / Gym", "Social Science", "Elective"]
     
     static var creditReqs = [4.0, 3.0, 2.0, 1.0, 0.5, 0.25, 2.25, 2.0, 4.0]
     
