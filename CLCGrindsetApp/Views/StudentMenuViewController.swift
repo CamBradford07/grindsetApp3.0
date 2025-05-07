@@ -16,7 +16,14 @@ class StudentMenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logoutButton(_ sender: UIButton) {
+        AppData.currentStudent = Student(dict: ["": ""])
+        AppData.saveUserAndPass()
+        if let viewControllers = self.navigationController?.viewControllers, viewControllers.count >= 3 {
+            self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -666,7 +666,19 @@
                             <constraint firstItem="3Z9-wZ-Xio" firstAttribute="trailing" secondItem="d06-aB-qQG" secondAttribute="trailing" id="jEp-8k-w20"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BYy-sV-x4g"/>
+                    <navigationItem key="navigationItem" id="BYy-sV-x4g">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="x8K-AL-l16">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RpX-G3-MAP">
+                                <rect key="frame" x="265.33333333333331" y="5" width="111.66666666666669" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right" catalog="system" imagePlacement="trailing" title="Logout "/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="r4A-Cp-BgM" eventType="touchUpInside" id="hYw-D4-4lc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt7-Fx-oeF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1327,7 +1339,20 @@ apfmae</string>
                             <constraint firstItem="iQ3-zu-fgQ" firstAttribute="leading" secondItem="xqo-e1-nB8" secondAttribute="leading" id="vXK-83-Fo0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A7J-VL-Swl"/>
+                    <navigationItem key="navigationItem" id="A7J-VL-Swl">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hfb-Jw-dLu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lK4-Wr-hIX">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right" catalog="system" imagePlacement="trailing" title="Logout "/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="U2m-wg-TjM" eventType="touchUpInside" id="OmL-kD-JVu"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laA-uW-iAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
