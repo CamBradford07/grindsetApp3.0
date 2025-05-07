@@ -8,24 +8,23 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseAuth
+import CryptoKit
+import AuthenticationServices
+import GoogleSignIn
 
-class loginViewController: UIViewController, UITextFieldDelegate {
+class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
 
+    @IBOutlet weak var emailTextOutlet: UITextField!
+    @IBOutlet weak var passwordFieldOutlet: UITextField!
     
-    
-    @IBOutlet weak var usernameOutlet: UITextField!
-    @IBOutlet weak var passwordOutlet: UITextField!
-    
-    
+    fileprivate var currentNonce: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameOutlet.delegate = self
-        passwordOutlet.delegate = self
-        usernameOutlet.text = ""
-        passwordOutlet.text = ""
-
-        // Do any additional setup after loading the view.
+        passwordFieldOutlet.delegate = self
+        emailTextOutlet.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,75 +36,96 @@ class loginViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    @IBAction func submitAction(_ sender: Any) {
-    
-    
-        let enteredUsername = usernameOutlet.text!
-        let enteredPassword = passwordOutlet.text!
+    @IBAction func emailLoginAction(_ sender: Any) {
+        let email = emailTextOutlet.text ?? ""
+        let password = passwordFieldOutlet.text ?? ""
         
-        var userFound = false
-        var userIndex = -1
-        for username in AppData.usernames{
-            if enteredUsername.lowercased() == username.lowercased(){
-                userFound = true
-                userIndex = AppData.usernames.firstIndex(of: username) ?? -1
-                break
-            }
+        if email == "" || password == ""{
+            createAlert(alertTitle: "Invalid Input", alertDesc: "Email and Password cannot be blank")
         }
-        
-        if userFound && userIndex != -1{
-            if enteredPassword == AppData.passwords[userIndex]{
-                AppData.currentStudent = AppData.students[userIndex]
-                AppData.saveUserAndPass()
-//                print(AppData.usernames[userIndex])
-//                for hi in AppData.students{
-//                    print("Account: \(hi.username)")
-//                }
-//                print(AppData.students[userIndex].username)
-                performSegue(withIdentifier: "loginSuccess", sender: self)
-            }else{
-                createAlert(alertTitle: "Incorrect", alertDesc: "Username or password incorrect or nonexistent")
+        else{
+            var userFound = false
+            
+            for id in AppData.ids{
+                if id == email{
+                    userFound = true
+                    break
+                }
             }
-        }else{
-            createAlert(alertTitle: "Incorrect", alertDesc: "Username or password incorrect or nonexistent")
-        }
-    }
-    
-    
-    
-    
-    @IBAction func testAction(_ sender: Any) {
-        // this is an account i made before
-        let enteredUsername = "TESTACCOUNT"
-        let enteredPassword = "Testing123"
-        
-        var userFound = false
-        var userIndex = -1
-        for username in AppData.usernames{
-            if enteredUsername.lowercased() == username.lowercased(){
-                userFound = true
-                userIndex = AppData.usernames.firstIndex(of: username) ?? -1
-                break
+            print(userFound)
+            
+            if userFound == true{
+                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                    print("User Accessed")
+                    var userIndex = AppData.ids.firstIndex(of: email)!
+                    AppData.currentStudent = AppData.students[userIndex]
+                    AppData.saveUserAndPass()
+                    self!.performSegue(withIdentifier: "loginSuccess", sender: self)
+                }
+            } else {
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    print("User Creation")
+                    var newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                    newStudent.addToFirebase(docRef: AppData.ref)
+                    AppData.currentStudent = newStudent
+                    AppData.saveUserAndPass()
+                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                }
             }
-        }
-        
-        if userFound && userIndex != -1{
-            if enteredPassword == AppData.passwords[userIndex]{
-                AppData.currentStudent = AppData.students[userIndex]
-                AppData.saveUserAndPass()
-                performSegue(withIdentifier: "loginSuccess", sender: self)
-            }else{
-                createAlert(alertTitle: "Incorrect", alertDesc: "Username or password incorrect or nonexistent")
-            }
-        }else{
-            createAlert(alertTitle: "Incorrect", alertDesc: "Username or password incorrect or nonexistent")
+            
+            
         }
     }
     
     
+    @IBAction func googleLoginAction(_ sender: UIButton) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+          guard error == nil else {
+            print(error)
+              return
+          }
+
+          guard let user = result?.user,
+            let idToken = user.idToken?.tokenString
+          else {
+           return
+          }
+
+          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                         accessToken: user.accessToken.tokenString)
+
+            var userFound = false
+            for id in AppData.ids{
+                if user.userID! == id{
+                    userFound = true
+                    break
+                }
+            }
+            
+            if userFound{
+                var userIndex = AppData.ids.firstIndex(of: user.userID!)!
+                var currentStudent = AppData.students[userIndex]
+                AppData.saveUserAndPass()
+                self.performSegue(withIdentifier: "loginSuccess", sender: self)
+            }else{
+                var newStudent = Student(id:user.profile?.name, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                newStudent.addToFirebase(docRef: AppData.ref)
+                AppData.currentStudent = newStudent
+                AppData.saveUserAndPass()
+                self.performSegue(withIdentifier: "loginSuccess", sender: self)
+            }
+            
+        }
+    }
     
-    @IBAction func newAccountAction(_ sender: Any) {
-    performSegue(withIdentifier: "newAccount", sender: self)
+    
+    @IBAction func appleLoginAction(_ sender: UIButton) {
+        startSignInWithAppleFlow()
     }
     
     
@@ -120,14 +140,112 @@ class loginViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true)
         }
     
-    /*
-    // MARK: - Navigation
+   
+    private func randomNonceString(length: Int = 32) -> String {
+      precondition(length > 0)
+      var randomBytes = [UInt8](repeating: 0, count: length)
+      let errorCode = SecRandomCopyBytes(kSecRandomDefault, randomBytes.count, &randomBytes)
+      if errorCode != errSecSuccess {
+        fatalError(
+          "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
+        )
+      }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+      let charset: [Character] =
+        Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+
+      let nonce = randomBytes.map { byte in
+        // Pick a random character from the set, wrapping around if needed.
+        charset[Int(byte) % charset.count]
+      }
+
+      return String(nonce)
     }
-    */
+    private func sha256(_ input: String) -> String {
+      let inputData = Data(input.utf8)
+      let hashedData = SHA256.hash(data: inputData)
+      let hashString = hashedData.compactMap {
+        String(format: "%02x", $0)
+      }.joined()
+
+      return hashString
+    }
+
+    func startSignInWithAppleFlow() {
+      let nonce = randomNonceString()
+      currentNonce = nonce
+      let appleIDProvider = ASAuthorizationAppleIDProvider()
+      let request = appleIDProvider.createRequest()
+      request.requestedScopes = [.fullName, .email]
+      request.nonce = sha256(nonce)
+
+      let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+      authorizationController.delegate = self
+      authorizationController.presentationContextProvider = self
+      authorizationController.performRequests()
+    }
+    
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+          guard let nonce = currentNonce else {
+            fatalError("Invalid state: A login callback was received, but no login request was sent.")
+          }
+          guard let appleIDToken = appleIDCredential.identityToken else {
+            print("Unable to fetch identity token")
+            return
+          }
+          guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+            print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+            return
+          }
+          // Initialize a Firebase credential, including the user's full name.
+          let credential = OAuthProvider.appleCredential(withIDToken: idTokenString,
+                                                            rawNonce: nonce,
+                                                            fullName: appleIDCredential.fullName)
+          // Sign in with Firebase.
+          Auth.auth().signIn(with: credential) { (authResult, error) in
+              if (error != nil) {
+              // Error. If error.code == .MissingOrInvalidNonce, make sure
+              // you're sending the SHA256-hashed nonce as a hex string with
+              // your request to Apple.
+                  print(error?.localizedDescription)
+              return
+            }
+              var user = appleIDCredential.user
+              
+              var userFound = false
+              for id in AppData.ids{
+                  if id == user{
+                      userFound = true
+                      break
+                  }
+              }
+              
+              if userFound{
+                  var userIndex = AppData.ids.firstIndex(of: user)!
+                  AppData.currentStudent = AppData.students[userIndex]
+                  AppData.saveUserAndPass()
+                  self.performSegue(withIdentifier: "loginSuccess", sender: self)
+              }else{
+                  var newStudent = Student(id: appleIDCredential.fullName?.givenName!, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                  newStudent.addToFirebase(docRef: AppData.ref)
+                  AppData.currentStudent = newStudent
+                  AppData.saveUserAndPass()
+                  self.performSegue(withIdentifier: "loginSuccess", sender: self)
+              }
+
+          }
+        }
+      }
+
+      func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+          print(error)
+      }
+
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        ASPresentationAnchor()
+    }
 
 }

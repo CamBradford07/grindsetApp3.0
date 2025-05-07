@@ -23,8 +23,7 @@ class AppData{
     
     static var ref: DocumentReference!
     static var rankRef: DocumentReference!
-    static var usernames = [String]()
-    static var passwords = [String]()
+    static var ids = [String]()
     static var students = [Student]()
     
     static var currentStudent: Student!
@@ -40,8 +39,7 @@ class AppData{
     static func saveUserAndPass(){
         if let currentStudent = currentStudent{
             // check if it even exists
-            defaults.set(currentStudent.username, forKey: "username")
-            defaults.set(currentStudent.password, forKey: "password")
+            defaults.set(currentStudent.id, forKey: "ID")
         }
     }
     
