@@ -474,7 +474,6 @@
                                             <segment title="" image="star" catalog="system"/>
                                         </segments>
                                         <connections>
-                                            <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="t5a-t0-w3v"/>
                                             <action selector="useSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="onw-fh-Rva"/>
                                         </connections>
                                     </segmentedControl>
@@ -494,8 +493,6 @@
                                             <segment title="" image="star" catalog="system"/>
                                         </segments>
                                         <connections>
-                                            <action selector="difSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="hyl-P3-IK9"/>
-                                            <action selector="useSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="psi-LL-qM5"/>
                                             <action selector="workSC:" destination="dMh-kL-sgi" eventType="valueChanged" id="cx9-pX-0Oz"/>
                                         </connections>
                                     </segmentedControl>

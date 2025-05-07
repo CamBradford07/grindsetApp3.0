@@ -42,13 +42,20 @@ class rateOneClassViewController: UIViewController{
     
     @IBAction func buttonAction(_ sender: UIButton) {
         
+        allRanks[AppData.rateIndex].totalFunRank.append(fun ?? 1.0)
+        
         allRanks[AppData.rateIndex].totalDifficultyRank.append(dif ?? 1.0)
         
-        allRanks[AppData.rateIndex].totalFunRank.append(fun ?? 1.0)
+        allRanks[AppData.rateIndex].totalUsefulnessRank.append(use ?? 1.0)
         
         allRanks[AppData.rateIndex].totalWorkRank.append(work ?? 1.0)
         
-        allRanks[AppData.rateIndex].totalUsefulnessRank.append(fun ?? 1.0)
+        
+        
+        print(allRanks[AppData.rateIndex].totalFunRank[0])
+        print(allRanks[AppData.rateIndex].totalDifficultyRank[0])
+        print(allRanks[AppData.rateIndex].totalUsefulnessRank[0])
+        print(allRanks[AppData.rateIndex].totalWorkRank[0])
         
         self.navigationController?.popViewController(animated: true)
         
