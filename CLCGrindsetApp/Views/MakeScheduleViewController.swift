@@ -58,9 +58,12 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
             
             
             // FIX THIS STUFF -Eva
-            var subjectIndex = GradArrays.classes.firstIndex(of: swipedCourse.subject)
+            var subjectIndex = GradArrays.classes.firstIndex(of: swipedCourse.subject)!
             print(swipedCourse.subject)
             print("subject index \(subjectIndex)")
+            print("credits \(swipedCourse.credits)")
+            GradArrays.creditReqs[subjectIndex] -= Double(swipedCourse.credits)!
+            GradArrays.totalCreditReq -= Double(swipedCourse.credits)!
             
             
             
