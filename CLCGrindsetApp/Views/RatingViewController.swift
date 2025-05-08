@@ -26,7 +26,15 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableViewOutlet.delegate = self
         
         textArea.delegate = self
+        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+    }
+//    for the wierd text dismissal thing
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -75,7 +83,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
             AppData.courseToRate = conformingCourses[indexPath.row]
         }
         AppData.rateIndex = indexPath.row
-        performSegue(withIdentifier: "toRateOne", sender: self)
+        performSegue(withIdentifier: "newRateSegue", sender: self)
     }
     /*
     // MARK: - Navigation
