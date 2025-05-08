@@ -36,6 +36,8 @@ class ClassDetailViewController: UIViewController  {
     }
     @IBAction func addToSchedule(_ sender: Any) {
         classClicked.selectedClasses.append(classClicked.cclass)
+        AppData.currentStudent.selectedClasses.append(classClicked.cclass.courseID)
+        AppData.currentStudent.saveChanges(docRef: AppData.ref)
 
         self.performSegue(withIdentifier: "allTheWayBack", sender: nil)
         self.navigationController?.popViewController(animated: false)
