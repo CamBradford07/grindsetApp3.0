@@ -8,15 +8,17 @@
 import Foundation
 import UIKit
 
-class ClassCell: UITableViewCell {
+class ClassCellSpecific: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var creditsLabel: UILabel!
     
     
-    func con(name: String, id: String)
+    func con(name: String, id: String, cred: String)
     {
         nameLabel.text = name
         idLabel.text = id
+        creditsLabel.text = "Credits: \(cred)"
     }
 }

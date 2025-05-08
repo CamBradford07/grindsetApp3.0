@@ -37,9 +37,12 @@ class ClassDetailViewController: UIViewController  {
     @IBAction func addToSchedule(_ sender: Any) {
         classClicked.selectedClasses.append(classClicked.cclass)
 
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "allTheWayBack", sender: nil)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
+
         
         //classClicked.selectedClass = currentSubjectClasses[periodClicked.selectedPeriod].courseName
         //currentSubjectClasses[periodClicked.selectedPeriod] = classClicked.cclass.courseName
