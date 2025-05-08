@@ -9,6 +9,8 @@ import UIKit
 
 class EvanViewController: UIViewController {
 
+    @IBOutlet weak var tableViewThing: UITableView!
+    
     @IBOutlet weak var evanOutlet: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
