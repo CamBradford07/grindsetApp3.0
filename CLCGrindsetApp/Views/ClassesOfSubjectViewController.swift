@@ -43,8 +43,8 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
         }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassesCellSpecific", for: indexPath) as! ClassCellSpecific
-        cell.con(name: String(currentSubjectClasses[indexPath.row].courseName), id:"\(currentSubjectClasses[indexPath.row].courseID)", cred: currentSubjectClasses[indexPath.row].credits)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassesCell", for: indexPath) as! ClassCell
+        cell.con(name: String(currentSubjectClasses[indexPath.row].courseName), id:"\(currentSubjectClasses[indexPath.row].courseID)")
         return cell
     }
 
