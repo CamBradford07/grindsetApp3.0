@@ -83,7 +83,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
             AppData.courseToRate = conformingCourses[indexPath.row]
         }
         AppData.rateIndex = indexPath.row
-        performSegue(withIdentifier: "toRateOne", sender: self)
+        performSegue(withIdentifier: "newRateSegue", sender: self)
     }
     /*
     // MARK: - Navigation
