@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KkZ-me-Unw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KkZ-me-Unw">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -429,7 +429,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-JE-OFh">
                                         <rect key="frame" x="0.0" y="143" width="393" height="72.666666666666686"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -448,7 +448,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-bT-niq">
                                         <rect key="frame" x="0.0" y="286" width="393" height="72.666666666666686"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -467,7 +467,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgo-nY-eJd">
                                         <rect key="frame" x="0.0" y="429" width="393" height="72.666666666666686"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -486,7 +486,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Bx-fr-oXx">
                                         <rect key="frame" x="0.0" y="572" width="393" height="72.666666666666629"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -1342,7 +1342,7 @@ apfmae</string>
                     <navigationItem key="navigationItem" id="A7J-VL-Swl">
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="hfb-Jw-dLu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lK4-Wr-hIX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lK4-Wr-hIX">
                                 <rect key="frame" x="265.33333333333331" y="5" width="111.66666666666669" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -1821,13 +1821,14 @@ apfmae</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="O9u-Rb-hwy"/>
+        <segue reference="PEe-Bk-68v"/>
         <segue reference="AYG-dX-cEP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="lock" width="960" height="720"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
