@@ -22,9 +22,18 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentSubjectClasses = allCourses.filter { $0.subject == subjectClicked.subject }
         tableView.dataSource = self
         tableView.delegate = self
+        currentSubjectClasses = allCourses.filter { $0.subject == subjectClicked.subject }
+        currentSubjectClasses.removeAll { i in
+            completedClasses.completedClasses.contains(i)
+        } //chat help
+        currentSubjectClasses.removeAll { i in
+            classClicked.selectedClasses.contains(i)
+        }
+        tableView.reloadData()
+        
+        
 
                 
     }
@@ -34,8 +43,8 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
         }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassesCell", for: indexPath) as! ClassCell
-        cell.con(name: String(currentSubjectClasses[indexPath.row].courseName), id:"\(currentSubjectClasses[indexPath.row].courseID)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassesCellSpecific", for: indexPath) as! ClassCellSpecific
+        cell.con(name: String(currentSubjectClasses[indexPath.row].courseName), id:"\(currentSubjectClasses[indexPath.row].courseID)", cred: currentSubjectClasses[indexPath.row].credits)
         return cell
     }
 

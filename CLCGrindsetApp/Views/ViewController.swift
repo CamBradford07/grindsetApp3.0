@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        for i in 0..<courses.count{
 //            print(courses[i].courseName)
 //        }
+        CompletedClassesViewController.noShowButton = false
         tableView.dataSource = self
         tableView.delegate = self
         filteredCourses = allCourses

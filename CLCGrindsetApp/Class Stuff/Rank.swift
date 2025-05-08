@@ -11,6 +11,8 @@ import Foundation
 var allRanks: [Rank] = []
 
 
+
+
 class Rank: Codable{
     
     var totalFunRank: [Double] = []

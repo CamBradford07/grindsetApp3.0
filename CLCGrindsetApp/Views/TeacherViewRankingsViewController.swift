@@ -8,49 +8,36 @@
 import UIKit
 
 class TeacherViewRankingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  
-    
+
     @IBOutlet weak var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadCoursesFromCSV()
+
+        print("Loaded course names: \(allCourses.map { $0.courseName })")
+
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
+        tableView.reloadData()
     }
-    
-    
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        AppData.currentStudent.selectedClasses.count
+        return allCourses.count  // Display all courses
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeacherRateCell", for: indexPath)
-        cell.textLabel?.text = getCourseByID(id: AppData.currentStudent.selectedClasses[indexPath.row])?.courseName
+
+        let course = allCourses[indexPath.row]
+        cell.textLabel?.text = course.courseName
         return cell
-        
-        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        AppData.teacherCourseClicked = getCourseByID(id: AppData.currentStudent.selectedClasses[indexPath.row])
+        let course = allCourses[indexPath.row]
+        AppData.teacherCourseClicked = course
         performSegue(withIdentifier: "toRankSpecific", sender: self)
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

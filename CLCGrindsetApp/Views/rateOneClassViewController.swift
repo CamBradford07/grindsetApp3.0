@@ -21,17 +21,17 @@ class rateOneClassViewController: UIViewController{
     
     @IBOutlet weak var titleOutletOneRate: UILabel!
     
-    var fun : Int?
-    var dif : Int?
-    var use : Int?
-    var work : Int?
+    var fun : Double?
+    var dif : Double?
+    var use : Double?
+    var work : Double?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         if let name = AppData.courseToRate?.courseName {
-            titleOutletOneRate.text = "Please Rate \(name)"
+            titleOutletOneRate.text = "Rate \(name)"
         }else{
             titleOutletOneRate.text = "no class to Rate!"
         }
@@ -42,10 +42,20 @@ class rateOneClassViewController: UIViewController{
     
     @IBAction func buttonAction(_ sender: UIButton) {
         
-        AppData.currentStudent.rankToBeSaved.totalFunRank.append(Double(fun ?? 0))
-        AppData.currentStudent.rankToBeSaved.totalDifficultyRank.append(Double(dif ?? 0))
-        AppData.currentStudent.rankToBeSaved.totalWorkRank.append(Double(work ?? 0))
-        AppData.currentStudent.rankToBeSaved.totalUsefulnessRank.append(Double(use ?? 0))
+        allRanks[AppData.rateIndex].totalFunRank.append(fun ?? 1.0)
+        
+        allRanks[AppData.rateIndex].totalDifficultyRank.append(dif ?? 1.0)
+        
+        allRanks[AppData.rateIndex].totalUsefulnessRank.append(use ?? 1.0)
+        
+        allRanks[AppData.rateIndex].totalWorkRank.append(work ?? 1.0)
+        
+        
+        
+        print(allRanks[AppData.rateIndex].totalFunRank[0])
+        print(allRanks[AppData.rateIndex].totalDifficultyRank[0])
+        print(allRanks[AppData.rateIndex].totalUsefulnessRank[0])
+        print(allRanks[AppData.rateIndex].totalWorkRank[0])
         
         self.navigationController?.popViewController(animated: true)
         
@@ -56,7 +66,7 @@ class rateOneClassViewController: UIViewController{
     
     
     @IBAction func difSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -66,12 +76,13 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        dif = selectedIndex
+        selectedIndex += 1
+        dif = Double(selectedIndex)
     }
     
     
     @IBAction func FunnSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -81,13 +92,13 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        fun = selectedIndex
-        
+        selectedIndex += 1
+        fun = Double(selectedIndex)
     }
     
    
     @IBAction func useSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -97,13 +108,14 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        use = selectedIndex
+        selectedIndex += 1
+        use = Double(selectedIndex)
     }
     
     
     
     @IBAction func workSC(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
+        var selectedIndex = sender.selectedSegmentIndex
         
         for i in 0...selectedIndex{
             sender.setImage(UIImage(systemName: "star.fill"), forSegmentAt: i)
@@ -113,7 +125,8 @@ class rateOneClassViewController: UIViewController{
                 sender.setImage(UIImage(systemName: "star"), forSegmentAt: i)
             }
         }
-        work = selectedIndex
+        selectedIndex += 1
+        work = Double(selectedIndex)
     }
     
     

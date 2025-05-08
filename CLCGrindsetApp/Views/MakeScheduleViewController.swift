@@ -34,8 +34,10 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! CreateScheduleCell
-        cell.classLabel.text = classClicked.selectedClasses[indexPath.row].courseName
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! CreateScheduleCell
+//        cell.classLabel.text = classClicked.selectedClasses[indexPath.row].courseName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassesCell", for: indexPath) as! ClassCell
+        cell.con(name: String(classClicked.selectedClasses[indexPath.row].courseName), id:"\(classClicked.selectedClasses[indexPath.row].courseID)")
         return cell
     }
     
@@ -53,6 +55,23 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         
         let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
             var swipedCourse = allCourses.first(where: {$0.courseName.contains(classClicked.selectedClasses[indexPath.row].courseName)})! //chatgpt help
+            
+            
+            // FIX THIS STUFF -Eva
+            if let subjectIndex = GradArrays.classes.firstIndex(of: swipedCourse.subject) {
+                print(swipedCourse.subject)
+                print("subject index \(subjectIndex)")
+                print("credits \(swipedCourse.credits)")
+                GradArrays.creditReqs[subjectIndex] -= Double(swipedCourse.credits)!
+                GradArrays.totalCreditReq -= Double(swipedCourse.credits)!
+            }
+            
+            
+            
+            
+            
+            
+            
             completedClasses.completedClasses.append(swipedCourse)
             classClicked.selectedClasses.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -72,6 +91,16 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         // now only shows this one and not delete??
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true  // or your own condition
+    } //chat gave me function
+    
+    func tableView(_ tableView: UITableView,
+                   moveRowAt sourceIndexPath: IndexPath,
+                   to destinationIndexPath: IndexPath) {
+        let movedObject = classClicked.selectedClasses.remove(at: sourceIndexPath.row)
+        classClicked.selectedClasses.insert(movedObject, at: destinationIndexPath.row)
+    } //chat gave me function
     
     
     // new copy

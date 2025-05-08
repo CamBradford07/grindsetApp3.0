@@ -82,7 +82,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             AppData.courseToRate = conformingCourses[indexPath.row]
         }
-        AppData.indexOfRate = indexPath.row
+        AppData.rateIndex = indexPath.row
         performSegue(withIdentifier: "toRateOne", sender: self)
     }
     /*

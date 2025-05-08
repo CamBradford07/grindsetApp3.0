@@ -14,6 +14,7 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
 
         AppData.ref = Firestore.firestore().collection("data").document("Accounts")
+        AppData.rankRef = Firestore.firestore().collection("data").document("Ranks")
         // Do any additional setup after loading the view.
     }
     

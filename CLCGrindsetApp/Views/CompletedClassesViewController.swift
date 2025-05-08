@@ -15,6 +15,8 @@ class CompletedClassesViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBOutlet weak var tableView: UITableView!
     
+    static var noShowButton = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -26,13 +28,16 @@ class CompletedClassesViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "completedCell", for: indexPath)
-        cell.textLabel?.text = completedClasses.completedClasses[indexPath.row].courseName
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "completedCell", for: indexPath)
+//        cell.textLabel?.text = completedClasses.completedClasses[indexPath.row].courseName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassesCell", for: indexPath) as! ClassCell
+        cell.con(name: String(completedClasses.completedClasses[indexPath.row].courseName), id:"\(completedClasses.completedClasses[indexPath.row].courseID)")
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         classClicked.cclass = completedClasses.completedClasses[indexPath.row]
+        CompletedClassesViewController.noShowButton = true
         performSegue(withIdentifier: "seeDetails", sender: nil)
     }
 
