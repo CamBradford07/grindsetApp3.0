@@ -43,6 +43,18 @@ class AppData{
         }
     }
     
-
+    static func loadSelectedClasses(){
+        classClicked.selectedClasses.removeAll()
+        print(allCourses)
+        
+        for classID in currentStudent.selectedClasses{
+            if let newCourse = getCourseByID(id: classID){
+                print("Success")
+                classClicked.selectedClasses.append(newCourse)
+            }else{
+                print("Error")
+            }
+        }
+    }
     
 }

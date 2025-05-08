@@ -15,7 +15,7 @@ class firstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // this code will check if the account already exists. should probably reorganize students into AppData, but i dont have enough time to make that work
-       
+        loadCoursesFromCSV()
         AppData.ref = Firestore.firestore().collection("data").document("Accounts")
         
         AppData.ref.addSnapshotListener { documentSnapshot, error in
@@ -63,6 +63,7 @@ class firstViewController: UIViewController {
         
         if userFound && userIndex != -1{
                 AppData.currentStudent = AppData.students[userIndex]
+                AppData.loadSelectedClasses()
                 performSegue(withIdentifier: "skipLogin", sender: self)
             }else{
                 performSegue(withIdentifier: "toLogin", sender: self)

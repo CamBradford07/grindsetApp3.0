@@ -31,7 +31,7 @@ class rateOneClassViewController: UIViewController{
         super.viewDidLoad()
         
         if let name = AppData.courseToRate?.courseName {
-            titleOutletOneRate.text = "Please Rate \(name)"
+            titleOutletOneRate.text = "Rate \(name)"
         }else{
             titleOutletOneRate.text = "no class to Rate!"
         }

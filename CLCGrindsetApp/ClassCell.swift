@@ -13,6 +13,7 @@ class ClassCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     
+    
     func con(name: String, id: String)
     {
         nameLabel.text = name
