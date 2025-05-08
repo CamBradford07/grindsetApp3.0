@@ -437,7 +437,7 @@
                                         <rect key="frame" x="0.0" y="137" width="393" height="69.666666666666686"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -458,7 +458,7 @@
                                         <rect key="frame" x="0.0" y="274" width="393" height="69.666666666666686"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -479,7 +479,7 @@
                                         <rect key="frame" x="0.0" y="411" width="393" height="69.666666666666686"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -500,7 +500,7 @@
                                         <rect key="frame" x="0.0" y="548" width="393" height="69.666666666666629"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
-                                            <segment title="" image="star" catalog="system"/>
+                                            <segment title="" image="star.fill" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
                                             <segment title="" image="star" catalog="system"/>
@@ -2045,6 +2045,7 @@ apfmae</string>
         <image name="lock" width="960" height="720"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -2052,10 +2053,10 @@ apfmae</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
