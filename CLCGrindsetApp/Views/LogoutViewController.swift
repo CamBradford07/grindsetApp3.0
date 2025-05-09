@@ -8,8 +8,12 @@
 import UIKit
 
 class LogoutViewController: UIViewController {
-
+    @IBOutlet weak var adminCodeOutlet: UITextField!
+    
     @IBOutlet weak var areYouLabel: UILabel!
+    
+    var adminCode = "MQL927GH35"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,16 @@ class LogoutViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func teacherAction(_ sender: UIButton) {
+        if adminCodeOutlet.text == adminCode{
+            performSegue(withIdentifier: "teacherPasswordSegue", sender: nil)
+        }
+        else{
+            areYouLabel.text = "User logged in: \((AppData.currentStudent!).id)\nSelect Student"
+        }
+    }
+    
     
     @IBAction func logoutAction(_ sender: Any) {
         AppData.currentStudent = Student(dict: ["": ""])
