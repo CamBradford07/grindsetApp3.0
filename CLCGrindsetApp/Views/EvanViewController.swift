@@ -27,8 +27,9 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         textArea.delegate = self
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-//        view.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
 //    for the wierd text dismissal thing
