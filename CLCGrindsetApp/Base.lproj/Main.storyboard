@@ -1670,6 +1670,7 @@ apfmae</string>
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="View Teacher Bio"/>
                                                             </attributedString>
+                                                            <color key="baseBackgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <segue destination="AB6-N5-vNW" kind="show" id="Jgy-wB-inn"/>
@@ -1709,7 +1710,9 @@ apfmae</string>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled" title="Add To Schedule"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="Add To Schedule">
+                                                                    <color key="baseBackgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="addToSchedule:" destination="Wre-QM-p0D" eventType="touchUpInside" id="c6e-N3-TWZ"/>
                                                                 </connections>
@@ -2004,10 +2007,10 @@ apfmae</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
