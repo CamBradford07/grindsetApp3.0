@@ -60,6 +60,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                     var userIndex = AppData.ids.firstIndex(of: email)!
                     AppData.currentStudent = AppData.students[userIndex]
                     AppData.saveUserAndPass()
+                   AppData.loadSelectedClasses()
                     self!.performSegue(withIdentifier: "loginSuccess", sender: self)
                 }
             } else {
@@ -69,6 +70,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                     newStudent.addToFirebase(docRef: AppData.ref)
                     AppData.currentStudent = newStudent
                     AppData.saveUserAndPass()
+                   AppData.loadSelectedClasses()
                     self.performSegue(withIdentifier: "loginSuccess", sender: self)
                 }
             }
@@ -111,12 +113,14 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                 var userIndex = AppData.ids.firstIndex(of: user.userID!)!
                 var currentStudent = AppData.students[userIndex]
                 AppData.saveUserAndPass()
+                   AppData.loadSelectedClasses()
                 self.performSegue(withIdentifier: "loginSuccess", sender: self)
             }else{
                 var newStudent = Student(id:user.profile?.name, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
                 newStudent.addToFirebase(docRef: AppData.ref)
                 AppData.currentStudent = newStudent
                 AppData.saveUserAndPass()
+                   AppData.loadSelectedClasses()
                 self.performSegue(withIdentifier: "loginSuccess", sender: self)
             }
             
@@ -226,12 +230,14 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                   var userIndex = AppData.ids.firstIndex(of: user)!
                   AppData.currentStudent = AppData.students[userIndex]
                   AppData.saveUserAndPass()
+                   AppData.loadSelectedClasses()
                   self.performSegue(withIdentifier: "loginSuccess", sender: self)
               }else{
-                  var newStudent = Student(id: appleIDCredential.fullName?.givenName!, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                  var newStudent = Student(id: "\(appleIDCredential.fullName!)", gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
                   newStudent.addToFirebase(docRef: AppData.ref)
                   AppData.currentStudent = newStudent
                   AppData.saveUserAndPass()
+                   AppData.loadSelectedClasses()
                   self.performSegue(withIdentifier: "loginSuccess", sender: self)
               }
 
