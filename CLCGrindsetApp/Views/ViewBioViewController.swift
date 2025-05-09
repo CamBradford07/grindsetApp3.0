@@ -18,8 +18,13 @@ class ViewBioViewController: UIViewController {
       
 
             // Do any additional setup after loading the view.
+        if !AppData.teachers.isEmpty{
             teacherNameLabel.text = AppData.teachers[0].name
             bioLabel.text = AppData.teachers[0].bio
+        }else{
+            teacherNameLabel.text = "Information Unavailable"
+            bioLabel.text = "Information Unavailable"
+        }
             
         }
     }
