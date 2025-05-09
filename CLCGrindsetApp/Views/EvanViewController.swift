@@ -42,7 +42,7 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         conformingCourses = [Course]()
         
-        for course in classesTaken {
+        for course in allCourses {
             if course.courseName.lowercased().contains(searchTerm) {
                 conformingCourses.append(course)
             }
@@ -57,7 +57,7 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchTerm == ""
         {
-            return classesTaken.count
+            return allCourses.count
         } else {
             return conformingCourses.count
         }
@@ -87,7 +87,15 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         } else {
             AppData.currentStudent.selectedClasses.append(target)
+            let alert = UIAlertController(title: "Class added to your profile!", message: "Success", preferredStyle: UIAlertController.Style.alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            
             self.navigationController?.popViewController(animated: true)
+            
+            alert.addAction(alertAction)
+            self.present(alert, animated: true)
+            
+            
         }
     }
     /*
