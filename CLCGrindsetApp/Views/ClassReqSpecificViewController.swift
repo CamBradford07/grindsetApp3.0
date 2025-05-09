@@ -22,6 +22,7 @@ class ClassReqSpecificViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         classClicked.cclass = sortedClasses[indexPath.row]
         //performSegue(withIdentifier: "seeDetails", sender: nil)
+        AppData.rateIndex = indexPath.row
         performSegue(withIdentifier: "reqClassDetails", sender: nil)
     }
     

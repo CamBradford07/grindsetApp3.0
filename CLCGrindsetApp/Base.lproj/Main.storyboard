@@ -904,7 +904,7 @@
                     <connections>
                         <outlet property="tableViewOutlet" destination="cKD-Hb-wFe" id="Nmu-I4-0H6"/>
                         <outlet property="textArea" destination="blt-P8-0dU" id="4AK-XS-JaX"/>
-                        <segue destination="dMh-kL-sgi" kind="show" identifier="toRateOne" id="X8E-Gp-WAV"/>
+                        <segue destination="dMh-kL-sgi" kind="show" identifier="newRateSegue" id="xCH-fd-VmC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMI-hY-kaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
