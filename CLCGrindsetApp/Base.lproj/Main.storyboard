@@ -210,7 +210,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-tb-d3O">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-uk-dKU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login/Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-uk-dKU">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="143"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
@@ -230,7 +230,7 @@
                                         <rect key="frame" x="0.0" y="250.33333333333331" width="393" height="143"/>
                                         <color key="backgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Login">
+                                        <buttonConfiguration key="configuration" style="plain" title="Login/Sign up">
                                             <color key="baseForegroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
