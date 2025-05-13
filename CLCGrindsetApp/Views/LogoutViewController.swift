@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogoutViewController: UIViewController {
+class LogoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var adminCodeOutlet: UITextField!
     
     @IBOutlet weak var areYouLabel: UILabel!
@@ -23,7 +23,21 @@ class LogoutViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
 
+        adminCodeOutlet.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     @IBAction func teacherAction(_ sender: UIButton) {
