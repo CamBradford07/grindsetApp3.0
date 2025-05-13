@@ -19,6 +19,10 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
     @IBOutlet weak var passwordFieldOutlet: UITextField!
     
     fileprivate var currentNonce: String?
+    
+    var alreadyLoggedIn = false
+    
+    // peter's goofy ahh better stop autoclicking now.
 
     
     override func viewDidLoad() {
@@ -37,6 +41,11 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
     
 
     @IBAction func emailLoginAction(_ sender: Any) {
+        if alreadyLoggedIn {
+            return
+        }
+        
+        alreadyLoggedIn = true
         let email = emailTextOutlet.text ?? ""
         let password = passwordFieldOutlet.text ?? ""
         

@@ -27,8 +27,9 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         textArea.delegate = self
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-//        view.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
 //    for the wierd text dismissal thing
@@ -36,6 +37,12 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         searchTerm = textArea.text!.lowercased()
