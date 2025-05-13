@@ -55,7 +55,9 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
             performSegue(withIdentifier: "teacherPasswordSegue", sender: nil)
         }
         else{
-            areYouLabel.text = "User logged in: \((AppData.currentStudent!).id)\nSelect Student"
+            let alert = UIAlertController(title: "Login Error", message: "Please Enter The Admin Code", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
