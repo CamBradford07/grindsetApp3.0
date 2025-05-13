@@ -35,6 +35,7 @@ class TeacherViewRankingsViewController: UIViewController, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         AppData.teacherCourseClicked = getCourseByID(id: AppData.currentStudent.selectedClasses[indexPath.row])
+        AppData.teacherIndex = indexPath.row
         performSegue(withIdentifier: "toRankSpecific", sender: self)
         
     }

@@ -12,7 +12,7 @@ class TeacherSpecificRankViewController: UIViewController {
     @IBOutlet weak var nameOutlet: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameOutlet.text = "\(AppData.teacherCourseClicked)"
+        nameOutlet.text = "Difficulty: \(allRanks[AppData.teacherIndex].getDifficultyRank())\nFun: \(allRanks[AppData.teacherIndex].getFunRank())\nUsefulness: \(allRanks[AppData.teacherIndex].getUsefulnessRank())\n Work Load: \(allRanks[AppData.teacherIndex].getWorkRank())"
         // Do any additional setup after loading the view.
     }
     
