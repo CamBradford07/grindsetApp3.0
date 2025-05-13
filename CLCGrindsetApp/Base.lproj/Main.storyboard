@@ -280,6 +280,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="b4v-7a-brB"/>
                     <connections>
+                        <outlet property="emailTextOutlet" destination="D1X-Ce-3IO" id="ozF-2Z-1Fx"/>
+                        <outlet property="passwordFieldOutlet" destination="kml-kZ-0r0" id="Ma1-0L-f97"/>
                         <segue destination="eM7-h2-V3r" kind="show" identifier="loginSuccess" id="AYG-dX-cEP"/>
                     </connections>
                 </viewController>
