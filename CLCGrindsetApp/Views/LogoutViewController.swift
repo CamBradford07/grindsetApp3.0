@@ -40,6 +40,16 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        for scalar in string.unicodeScalars {
+            if scalar.properties.isEmoji {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     @IBAction func teacherAction(_ sender: UIButton) {
         if adminCodeOutlet.text == adminCode{
             performSegue(withIdentifier: "teacherPasswordSegue", sender: nil)

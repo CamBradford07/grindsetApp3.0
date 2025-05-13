@@ -45,6 +45,11 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        for scalar in string.unicodeScalars {
+            if scalar.properties.isEmoji {
+                return false
+            }
+        }
         searchTerm = textArea.text!.lowercased()
         
         conformingCourses = [Course]()
