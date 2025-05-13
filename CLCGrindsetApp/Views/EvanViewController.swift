@@ -38,6 +38,11 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         searchTerm = textArea.text!.lowercased()
         
