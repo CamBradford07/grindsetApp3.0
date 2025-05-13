@@ -35,6 +35,14 @@ class ClassDetailViewController: UIViewController  {
         
     }
     @IBAction func addToSchedule(_ sender: Any) {
+        
+        for yum in AppData.currentStudent.selectedClasses{
+            if classClicked.cclass.courseID == yum{
+                // create alert or somethin
+                createAlert(alertTitle: "Class already added", alertDesc: "The class is already present in your schedule.")
+                return
+            }
+        }
         classClicked.selectedClasses.append(classClicked.cclass)
         AppData.currentStudent.selectedClasses.append(classClicked.cclass.courseID)
         AppData.currentStudent.saveChanges(docRef: AppData.ref)
@@ -49,5 +57,11 @@ class ClassDetailViewController: UIViewController  {
         //classClicked.selectedClass = currentSubjectClasses[periodClicked.selectedPeriod].courseName
         //currentSubjectClasses[periodClicked.selectedPeriod] = classClicked.cclass.courseName
     }
+    
+    func createAlert(alertTitle: String, alertDesc: String){
+            let alert = UIAlertController(title: alertTitle, message: alertDesc, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     
 }
