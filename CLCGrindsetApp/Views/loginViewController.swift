@@ -41,9 +41,13 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
     
     override func viewWillAppear(_ animated: Bool) {
         if newAccountViewController.createdNew{
+            alreadyLoggedIn = true
             performSegue(withIdentifier: "loginSuccess", sender: nil)
             newAccountViewController.createdNew = false
             
+            
+        } else {
+            alreadyLoggedIn = false
         }
     }
     
@@ -54,6 +58,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
         }
         
         alreadyLoggedIn = true
+        
         let email = emailTextOutlet.text ?? ""
         let password = passwordFieldOutlet.text ?? ""
         
