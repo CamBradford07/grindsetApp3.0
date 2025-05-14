@@ -1893,6 +1893,14 @@ apfmae</string>
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uCo-2a-xc1">
+                                <rect key="frame" x="318" y="37.333333333333329" width="40" height="35.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="A2k-DO-ovq"/>
+                                    <constraint firstAttribute="height" constant="40" id="d3l-Q2-5f2"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtQ-nj-zKq">
                                 <rect key="frame" x="313" y="30" width="50" height="50"/>
                                 <constraints>
@@ -1905,14 +1913,6 @@ apfmae</string>
                                     <action selector="infoButton:" destination="11s-hl-6y6" eventType="touchUpInside" id="Zv7-MH-DfA"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uCo-2a-xc1">
-                                <rect key="frame" x="318" y="37.333333333333329" width="40" height="35.333333333333329"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="A2k-DO-ovq"/>
-                                    <constraint firstAttribute="height" constant="40" id="d3l-Q2-5f2"/>
-                                </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kJN-aS-CC2"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
