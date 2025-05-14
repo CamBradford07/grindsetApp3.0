@@ -13,6 +13,8 @@ class StudentMenuViewController: UIViewController {
         super.viewDidLoad()
       
         classesTaken = allCourses
+        self.navigationItem.hidesBackButton = true
+
         // Do any additional setup after loading the view.
     }
     
