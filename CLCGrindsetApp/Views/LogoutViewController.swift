@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+    
 class LogoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var adminCodeOutlet: UITextField!
     

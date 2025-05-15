@@ -7,6 +7,8 @@
 
 import UIKit
 
+// this is a comment on yoru personality, >:( MEGA GROSS 2/10
+//ignore the previous comment, that was not me, your personality is great :) keep going :D
 class GradArrays {
     static var classes = ["English", "Math", "Science", "Computer Science", "Driver's Education", "Consumer Ed", "PE / Gym", "Social Science", "Elective"]
     
@@ -24,8 +26,8 @@ class GradReqViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        
-        var cell = reqTableView.dequeueReusableCell(withIdentifier: "ReqCell") as! ReqCell
+        //i fix yellow error :D
+        let cell = reqTableView.dequeueReusableCell(withIdentifier: "ReqCell") as! ReqCell
         
         cell.customize(name: GradArrays.classes[index], creditText: "\(GradArrays.creditReqs[index]) credits required")
         
@@ -43,6 +45,7 @@ class GradReqViewController: UIViewController, UITableViewDataSource, UITableVie
     //let totalCreditReq = 20.25
     
     //let creditReqs = [4.0, 3.0, 2.0, 1.0, 0.5, 0.25, 2.25, 2.0, 4.0]
+    //commented code above was moved up and this is very nessisary to say
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +60,7 @@ class GradReqViewController: UIViewController, UITableViewDataSource, UITableVie
 
     /*
     // MARK: - Navigation
+     //HARK: - idk something about angels
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
