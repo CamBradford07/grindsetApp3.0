@@ -21,6 +21,14 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for course in allCourses {
+            if course.term == "Spring Semester"
+            {
+                continue
+            }
+            conformingCourses.append(course)
+        }
 
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
@@ -71,33 +79,18 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchTerm == ""
-        {
-            return classesTaken.count
-        } else {
-            return conformingCourses.count
-        }
-        
-        
+        return conformingCourses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        if searchTerm == "" {
-            cell.textLabel?.text = allCourses[indexPath.row].courseName
-        } else {
-            cell.textLabel?.text = conformingCourses[indexPath.row].courseName
-        }
+        cell.textLabel?.text = conformingCourses[indexPath.row].courseName
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if searchTerm == "" {
-            AppData.courseToRate = classesTaken[indexPath.row]
-        } else {
-            AppData.courseToRate = conformingCourses[indexPath.row]
-        }
+        AppData.courseToRate = conformingCourses[indexPath.row]
         AppData.rateIndex = indexPath.row
         performSegue(withIdentifier: "newRateSegue", sender: self)
     }
