@@ -53,17 +53,17 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchTerm = textArea.text!.lowercased() + string
         
         conformingCourses = [Course]()
-        print ("_________")
         for course in allCourses {
             if course.courseName.lowercased().contains(searchTerm) {
+                if course.term == "Spring Semester"
+                {
+                    continue
+                }
                 conformingCourses.append(course)
-                
-                print(course.courseName.lowercased())
             }
         }
         
         tableViewOutlet.reloadData()
-        
         
         return true
     }
