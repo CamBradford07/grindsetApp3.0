@@ -29,13 +29,27 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
         super.viewDidLoad()
         passwordFieldOutlet.delegate = self
         emailTextOutlet.delegate = self
+        passwordFieldOutlet.text = ""
+        emailTextOutlet.text = ""
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if newAccountViewController.createdNew{
+            alreadyLoggedIn = true
             performSegue(withIdentifier: "loginSuccess", sender: nil)
             newAccountViewController.createdNew = false
             
+            
+        } else {
+            alreadyLoggedIn = false
         }
     }
     
@@ -46,6 +60,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
         }
         
         alreadyLoggedIn = true
+        
         let email = emailTextOutlet.text ?? ""
         let password = passwordFieldOutlet.text ?? ""
         

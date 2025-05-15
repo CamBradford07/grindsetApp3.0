@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+//fire :)
 
 class firstViewController: UIViewController {
     
@@ -45,7 +46,7 @@ class firstViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    //you gotta lock in
     @IBAction func lockInAction(_ sender: Any) {
         //
         let enteredID = UserDefaults.standard.string(forKey: "ID") ?? ""

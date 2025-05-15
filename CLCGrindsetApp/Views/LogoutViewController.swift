@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+    
 class LogoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var adminCodeOutlet: UITextField!
     
@@ -40,15 +40,22 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        for scalar in string.unicodeScalars {
-            if scalar.properties.isEmoji {
-                return false
-            }
-        }
-        
-        return true
-    }
+//    code that filters emojis
+//    for some reason it was filtering numbers too???
+//    change text field type to ascii thing ONLY
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        print("input: '\(string)' \n in array thingy: \(Array(string.unicodeScalars))")
+//
+//        for scalar in string.unicodeScalars {
+//            if scalar.properties.isEmoji {
+//                print("i am emogi: \(scalar)")
+//                return false
+//            }
+//        }
+//        
+//        return true
+//    }
     
     @IBAction func teacherAction(_ sender: UIButton) {
         if adminCodeOutlet.text == adminCode{

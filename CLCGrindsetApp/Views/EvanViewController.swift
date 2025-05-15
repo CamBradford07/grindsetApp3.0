@@ -21,6 +21,14 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for course in allCourses {
+            if course.term == "Spring Semester"
+            {
+                continue
+            }
+            conformingCourses.append(course)
+        }
 
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
@@ -44,23 +52,26 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        for scalar in string.unicodeScalars {
-            if scalar.properties.isEmoji {
-                return false
-            }
-        }
-        searchTerm = textArea.text!.lowercased()
+//        comment out for same reason as in logout view controller
+//        for scalar in string.unicodeScalars {
+//            if scalar.properties.isEmoji {
+//                return false
+//            }
+//        }
+        searchTerm = textArea.text!.lowercased() + string
         
         conformingCourses = [Course]()
-        
         for course in allCourses {
             if course.courseName.lowercased().contains(searchTerm) {
+                if course.term == "Spring Semester"
+                {
+                    continue
+                }
                 conformingCourses.append(course)
             }
         }
         
         tableViewOutlet.reloadData()
-        
         
         return true
     }
@@ -68,23 +79,12 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchTerm == ""
-        {
-            return allCourses.count
-        } else {
-            return conformingCourses.count
-        }
-        
-        
+        return conformingCourses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addTeachingClassCell", for: indexPath)
-        if searchTerm == "" {
-            cell.textLabel?.text = allCourses[indexPath.row].courseName
-        } else {
-            cell.textLabel?.text = conformingCourses[indexPath.row].courseName
-        }
+        cell.textLabel?.text = conformingCourses[indexPath.row].courseName
         return cell
     }
     
