@@ -64,24 +64,37 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
             print(userFound)
             
             if userFound == true{
+                var worked = false
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                     print("User Accessed")
                     var userIndex = AppData.ids.firstIndex(of: email)!
                     AppData.currentStudent = AppData.students[userIndex]
                     AppData.saveUserAndPass()
                    AppData.loadSelectedClasses()
+                    worked = true
                     self!.performSegue(withIdentifier: "loginSuccess", sender: self)
                 }
-            } else {
-                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                    print("User Creation")
-                    var newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
-                    newStudent.addToFirebase(docRef: AppData.ref)
-                    AppData.currentStudent = newStudent
-                    AppData.saveUserAndPass()
-                   AppData.loadSelectedClasses()
-                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                if !worked{
+                    createAlert(alertTitle: "Incorrect Password", alertDesc: "Password is incorrect")
                 }
+            } else {
+                let alert = UIAlertController(title: "Account Not Found", message: "No account was found with that information", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Create Account", style: .default) {(action) in
+                    self.performSegue(withIdentifier: "registerStart", sender: nil)
+                            }
+                alert.addAction(action)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true)
+//                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//                    print("User Creation")
+//                    var newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+//                    newStudent.addToFirebase(docRef: AppData.ref)
+//                    AppData.currentStudent = newStudent
+//                    AppData.saveUserAndPass()
+//                   AppData.loadSelectedClasses()
+//                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
+//                }
             }
             
             
