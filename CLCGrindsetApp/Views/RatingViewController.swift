@@ -59,7 +59,14 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                return false
 //            }
 //        }
+        
+        print("replace: \(string == "")")
+        
         searchTerm = textArea.text!.lowercased() + string
+        if string == ""
+        {
+            searchTerm.removeLast()
+        }
         
         conformingCourses = [Course]()
         for course in allCourses {
