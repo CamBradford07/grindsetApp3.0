@@ -18,7 +18,6 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         makeScheduleTableView.dataSource = self
         makeScheduleTableView.delegate = self
         makeScheduleTableView.reloadData()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,13 +104,12 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     // new copy
     
-    @IBAction func infoButton(_ sender: Any) {
-        let alert = UIAlertController(title: "How to", message: "Add classes by clicking on a subject then class in that subject. Most classes will have 2 copies for each semester, fall and spring. If you make a mistake or have completed a class, swipe left to complete or delete the class", preferredStyle: UIAlertController.Style.alert)
-        let alertAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-        
-        alert.addAction(alertAction)
-        self.present(alert, animated: true)
-
-    }
     
+    @IBAction func infoButton(_ sender: Any) {
+            print("wtf")
+            let alert = UIAlertController(title: "How to", message: "Add classes by clicking on a subject then class in that subject. Most classes will have 2 copies for each semester, fall and spring. If you make a mistake or have completed a class, swipe left to complete or delete the class", preferredStyle: UIAlertController.Style.alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(alertAction)
+            self.present(alert, animated: true)
+    }
 }
