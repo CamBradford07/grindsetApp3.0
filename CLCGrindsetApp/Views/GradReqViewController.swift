@@ -35,8 +35,9 @@ class GradReqViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goReqType", sender: self)
         AppData.reqType = indexPath.row
+        AppData.viewIndex = indexPath.row
+        performSegue(withIdentifier: "goReqType", sender: self)
     }
     
 
