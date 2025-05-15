@@ -50,13 +50,15 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                return false
 //            }
 //        }
-        searchTerm = textArea.text!.lowercased()
+        searchTerm = textArea.text!.lowercased() + string
         
         conformingCourses = [Course]()
-        
+        print ("_________")
         for course in allCourses {
             if course.courseName.lowercased().contains(searchTerm) {
                 conformingCourses.append(course)
+                
+                print(course.courseName.lowercased())
             }
         }
         

@@ -46,6 +46,7 @@ struct Course: Equatable {
 
 
 func loadCoursesFromCSV() {
+    allCourses = []
     guard let filePath = Bundle.main.path(forResource: "Classes", ofType: "tsv") else {
         print("CSV file not found")
         return

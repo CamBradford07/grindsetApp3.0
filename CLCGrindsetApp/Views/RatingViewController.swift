@@ -51,13 +51,15 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                return false
 //            }
 //        }
-        searchTerm = textArea.text!.lowercased()
+        searchTerm = textArea.text!.lowercased() + string
         
         conformingCourses = [Course]()
-        
-        for course in classesTaken {
+        print ("_________")
+        for course in allCourses {
             if course.courseName.lowercased().contains(searchTerm) {
                 conformingCourses.append(course)
+                
+                print(course.courseName.lowercased())
             }
         }
         
