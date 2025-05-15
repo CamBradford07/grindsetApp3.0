@@ -59,6 +59,10 @@ class EvanViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            }
 //        }
         searchTerm = textArea.text!.lowercased() + string
+        if string == ""
+        {
+            searchTerm.removeLast()
+        }
         
         conformingCourses = [Course]()
         for course in allCourses {
