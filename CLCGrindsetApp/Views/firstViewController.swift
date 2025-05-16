@@ -65,7 +65,12 @@ class firstViewController: UIViewController {
         if userFound && userIndex != -1{
                 AppData.currentStudent = AppData.students[userIndex]
                 AppData.loadSelectedClasses()
-                performSegue(withIdentifier: "skipLogin", sender: self)
+            if AppData.currentStudent.isStudent{
+                performSegue(withIdentifier: "skipLoginStudent", sender: self)
+            } else {
+                performSegue(withIdentifier: "skipLoginTeacher", sender: self)
+
+            }
             }else{
                 performSegue(withIdentifier: "toLogin", sender: self)
             }

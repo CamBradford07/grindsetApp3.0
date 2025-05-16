@@ -8,6 +8,9 @@
 import UIKit
     
 class LogoutViewController: UIViewController, UITextFieldDelegate {
+    
+    static var justRegistered = false
+    
     @IBOutlet weak var adminCodeOutlet: UITextField!
     
     @IBOutlet weak var areYouLabel: UILabel!
@@ -58,8 +61,8 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
 //    }
     
     @IBAction func teacherAction(_ sender: UIButton) {
-        AppData.currentStudent.isStudent = false
         if adminCodeOutlet.text == adminCode{
+            AppData.currentStudent.isStudent = false
             performSegue(withIdentifier: "teacherPasswordSegue", sender: nil)
         }
         else{
@@ -71,12 +74,15 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func studentButton(_ sender: Any) {
         AppData.currentStudent.isStudent = true
+        performSegue(withIdentifier: "finishedRegister", sender: nil)
+        LogoutViewController.justRegistered = true
     }
     
     @IBAction func logoutAction(_ sender: Any) {
         AppData.currentStudent = Student(dict: ["": ""])
         AppData.saveUserAndPass()
         self.navigationController?.popViewController(animated: true)
+        LogoutViewController.justRegistered = true
     }
     
     /*

@@ -17,9 +17,15 @@ class TeacherMainViewController: UIViewController {
     @IBAction func logoutButton(_ sender: UIButton) {
         AppData.currentStudent = Student(dict: ["": ""])
         AppData.saveUserAndPass()
-        if let viewControllers = self.navigationController?.viewControllers, viewControllers.count >= 3 {
-            self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
-        }    }
+        if LogoutViewController.justRegistered{
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: true)
+        } else{
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
    
 }
