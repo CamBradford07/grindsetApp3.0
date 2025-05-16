@@ -25,7 +25,7 @@ class ClassDetailViewController: UIViewController  {
         subjectLabel.text = "Subject: \(classClicked.cclass.subject)"
         creditLabel.text = "Credits: \(classClicked.cclass.credits)"
         gradeLabel.text = "\(classClicked.cclass.eligibleGrades)"
-        textView.text = "•Required Classes: \(classClicked.cclass.prerequisite)\n•\(classClicked.cclass.term)\n•Fun Rating: \(allRanks[AppData.viewIndex].getFunRank())\n•Difficulty Rating: \(allRanks[AppData.viewIndex].getDifficultyRank())\n•Usefulness Rating: \(allRanks[AppData.viewIndex].getUsefulnessRank())\n•Work Load Rating: \(allRanks[AppData.viewIndex].getWorkRank())\n•Description \(classClicked.cclass.description)\n•Notes: \(classClicked.cclass.enrollmentNotes)"
+//        textView.text = "•Required Classes: \(classClicked.cclass.prerequisite)\n•\(classClicked.cclass.term)\n•Fun Rating: \(allRanks[classClicked.cclass.courseID].getFunRank)\n•Difficulty Rating: \(allRanks[AppData.viewIndex].getDifficultyRank())\n•Usefulness Rating: \(allRanks[AppData.viewIndex].getUsefulnessRank())\n•Work Load Rating: \(allRanks[AppData.viewIndex].getWorkRank())\n•Description \(classClicked.cclass.description)\n•Notes: \(classClicked.cclass.enrollmentNotes)"
         
         if CompletedClassesViewController.noShowButton{
             addButton.isHidden = true

@@ -38,7 +38,7 @@ class CompletedClassesViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         classClicked.cclass = completedClasses.completedClasses[indexPath.row]
         CompletedClassesViewController.noShowButton = true
-        AppData.viewIndex = indexPath.row
+      
         performSegue(withIdentifier: "seeDetails", sender: nil)
     }
 
