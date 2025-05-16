@@ -15,6 +15,7 @@ class Student{
     var rankToBeSaved: Rank!
     var id: String
     var bio: String!
+    var isStudent: Bool!
     
     init(id: String!, gradeLevel: Int!, selectedClasses: [String]!, takenClasses: [String]!) {
         self.gradeLevel = gradeLevel
@@ -22,6 +23,7 @@ class Student{
         self.takenClasses = takenClasses
         self.rankToBeSaved = Rank()
         self.id = id
+        self.isStudent = true
     }
     
     init(dict: [String : Any]){
@@ -49,6 +51,9 @@ class Student{
                 self.rankToBeSaved = Rank()
             }
         }
+        if let bananas = dict["isStudent"] as? Bool{
+            self.isStudent = bananas
+        }
         
     }
     
@@ -58,7 +63,7 @@ class Student{
             rankInfo = encoded
         }
         
-        let informationDict = ["ID": id, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!,  "TakenClasses" : takenClasses!, "Ranks":rankInfo!] as! [String : Any]
+        let informationDict = ["ID": id, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!,  "TakenClasses" : takenClasses!, "Ranks":rankInfo!, "isStudent" : isStudent!] as! [String : Any]
         let uploadableStud = [id : informationDict] as! [String : Any]
         docRef.setData(uploadableStud, merge: true)
     }
@@ -68,7 +73,7 @@ class Student{
         if let encoded = try? JSONEncoder().encode(rankToBeSaved){
             rankInfo = encoded
         }
-        let informationDict = ["ID" : id, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!, "TakenClasses" : takenClasses!, "Ranks":rankInfo!] as! [String : Any]
+        let informationDict = ["ID": id, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!,  "TakenClasses" : takenClasses!, "Ranks":rankInfo!, "isStudent" : isStudent!] as! [String : Any]
         let uploadableStud = [id : informationDict] as! [String : Any]
         docRef.updateData(uploadableStud)
     }
