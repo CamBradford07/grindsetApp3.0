@@ -58,6 +58,7 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
 //    }
     
     @IBAction func teacherAction(_ sender: UIButton) {
+        AppData.currentStudent.isStudent = false
         if adminCodeOutlet.text == adminCode{
             performSegue(withIdentifier: "teacherPasswordSegue", sender: nil)
         }
@@ -68,6 +69,9 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func studentButton(_ sender: Any) {
+        AppData.currentStudent.isStudent = true
+    }
     
     @IBAction func logoutAction(_ sender: Any) {
         AppData.currentStudent = Student(dict: ["": ""])
