@@ -9,7 +9,6 @@ import UIKit
     
 class LogoutViewController: UIViewController, UITextFieldDelegate {
     
-    static var justRegistered = false
     
     @IBOutlet weak var adminCodeOutlet: UITextField!
     
@@ -32,6 +31,8 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+        
+        firstViewController.justRegistered = true
     }
     
     @objc func dismissKeyboard() {
@@ -75,14 +76,14 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
     @IBAction func studentButton(_ sender: Any) {
         AppData.currentStudent.isStudent = true
         performSegue(withIdentifier: "finishedRegister", sender: nil)
-        LogoutViewController.justRegistered = true
+        firstViewController.justRegistered = true
     }
     
     @IBAction func logoutAction(_ sender: Any) {
         AppData.currentStudent = Student(dict: ["": ""])
         AppData.saveUserAndPass()
         self.navigationController?.popViewController(animated: true)
-        LogoutViewController.justRegistered = true
+        firstViewController.justRegistered = true
     }
     
     /*

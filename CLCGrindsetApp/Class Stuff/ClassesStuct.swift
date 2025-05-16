@@ -85,7 +85,7 @@ func loadCoursesFromCSV() {
                
             )
             allCourses.append(course)
-            allRanks.append(Rank())
+//            allRanks.append(Rank())
         }
 
     } catch {

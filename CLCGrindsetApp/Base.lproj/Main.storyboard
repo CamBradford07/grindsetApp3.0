@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ez9-aM-3Bc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023.6641221374045" y="-723.23943661971839"/>
+            <point key="canvasLocation" x="494" y="-1287"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="w50-dx-4BI">
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53x-ws-eAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="-1456"/>
+            <point key="canvasLocation" x="494" y="-2100"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="UgB-x3-Pqa">
@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJw-eu-2tS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="-1456"/>
+            <point key="canvasLocation" x="1430" y="-2100"/>
         </scene>
         <!--Logout View Controller-->
         <scene sceneID="1v1-le-AUr">
@@ -496,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy4-rM-CvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="-723"/>
+            <point key="canvasLocation" x="1430" y="-1283"/>
         </scene>
         <!--Rate One Class View Controller-->
         <scene sceneID="vAP-PG-j5j">
@@ -729,7 +729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvg-Lf-eph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281.679389312977" y="-2332.394366197183"/>
+            <point key="canvasLocation" x="3282" y="-2100"/>
         </scene>
         <!--Teacher Main View Controller-->
         <scene sceneID="c1Y-gi-7HX">
@@ -805,10 +805,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="oBk-Re-e6I" kind="show" identifier="logout" id="cPw-g8-xhJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt7-Fx-oeF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3323" y="-1490"/>
+            <point key="canvasLocation" x="3282" y="-1283"/>
         </scene>
         <!--Class Req Specific View Controller-->
         <scene sceneID="G7d-iU-cdc">
@@ -1008,7 +1011,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mru-1H-sAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96.946564885496173" y="-723.23943661971839"/>
+            <point key="canvasLocation" x="-376" y="-1283"/>
         </scene>
         <!--Edit Teach Profile View Controller-->
         <scene sceneID="ZEH-Lg-zw3">
@@ -1146,7 +1149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4n3-Y9-juZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4104.580152671756" y="-2100"/>
+            <point key="canvasLocation" x="4132" y="-2100"/>
         </scene>
         <!--Teacher Profile View Controller-->
         <scene sceneID="izy-jb-Bcf">
@@ -1524,10 +1527,13 @@ apfmae</string>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="oBk-Re-e6I" kind="show" identifier="logout" id="lLS-gz-7sp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laA-uW-iAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3131" y="-704"/>
+            <point key="canvasLocation" x="2276" y="-723"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gHZ-CC-GCh">
@@ -1978,9 +1984,10 @@ apfmae</string>
         <segue reference="oBq-6i-yTw"/>
         <segue reference="3Ml-m6-OWZ"/>
         <segue reference="O9u-Rb-hwy"/>
-        <segue reference="87d-dG-uv2"/>
-        <segue reference="Zrg-Qx-dQm"/>
-        <segue reference="xjG-wu-Rzo"/>
+        <segue reference="pZL-fP-6u0"/>
+        <segue reference="tIq-eg-3hR"/>
+        <segue reference="uYE-Z0-1VK"/>
+        <segue reference="lLS-gz-7sp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="lock" width="960" height="720"/>

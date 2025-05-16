@@ -98,7 +98,7 @@ class RatingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         AppData.courseToRate = conformingCourses[indexPath.row]
-        AppData.rateIndex = indexPath.row
+//        AppData.rateIndex = indexPath.row
         performSegue(withIdentifier: "newRateSegue", sender: self)
     }
     /*
