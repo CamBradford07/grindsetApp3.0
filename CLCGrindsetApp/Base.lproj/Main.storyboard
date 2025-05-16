@@ -192,6 +192,7 @@
                     <navigationItem key="navigationItem" id="ZcG-tS-h3m"/>
                     <connections>
                         <segue destination="oBk-Re-e6I" kind="show" identifier="toLogin" id="FWr-85-gVy"/>
+                        <segue destination="eM7-h2-V3r" kind="show" identifier="skipLogin" id="uYE-Z0-1VK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ez9-aM-3Bc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1998,6 +1999,7 @@ apfmae</string>
         <segue reference="O9u-Rb-hwy"/>
         <segue reference="87d-dG-uv2"/>
         <segue reference="Zrg-Qx-dQm"/>
+        <segue reference="uYE-Z0-1VK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="lock" width="960" height="720"/>
