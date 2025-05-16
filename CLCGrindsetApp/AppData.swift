@@ -15,12 +15,11 @@ class AppData{
     
     static var courseToRate: Course?
     static var teacherCourseClicked: Course?
-    static var teacherIndex = -1
-    static var viewIndex = -1
+    
     
     static var studentSchedule = ["No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected"]
     
-    static var rateIndex = -1
+    
     
     static var ref: DocumentReference!
     static var rankRef: DocumentReference!
