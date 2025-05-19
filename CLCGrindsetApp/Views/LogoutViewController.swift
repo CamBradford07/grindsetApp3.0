@@ -8,6 +8,8 @@
 import UIKit
     
 class LogoutViewController: UIViewController, UITextFieldDelegate {
+    
+    
     @IBOutlet weak var adminCodeOutlet: UITextField!
     
     @IBOutlet weak var areYouLabel: UILabel!
@@ -19,7 +21,8 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
 
         loadCoursesFromCSV()
         
-        areYouLabel.text = "User logged in: \((AppData.currentStudent!).id)\nAre You A..."
+//        areYouLabel.text = "User logged in: \((AppData.currentStudent!).id)\nAre you a student or teacher?"
+        areYouLabel.text = "Are you a student or teacher?"
         
         self.navigationItem.hidesBackButton = true
 
@@ -29,6 +32,8 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+        
+        firstViewController.justRegistered = true
     }
     
     @objc func dismissKeyboard() {
@@ -58,8 +63,8 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
 //    }
     
     @IBAction func teacherAction(_ sender: UIButton) {
-        AppData.currentStudent.isStudent = false
         if adminCodeOutlet.text == adminCode{
+            AppData.currentStudent.isStudent = false
             performSegue(withIdentifier: "teacherPasswordSegue", sender: nil)
         }
         else{
@@ -71,12 +76,15 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func studentButton(_ sender: Any) {
         AppData.currentStudent.isStudent = true
+        performSegue(withIdentifier: "finishedRegister", sender: nil)
+        firstViewController.justRegistered = true
     }
     
     @IBAction func logoutAction(_ sender: Any) {
         AppData.currentStudent = Student(dict: ["": ""])
         AppData.saveUserAndPass()
         self.navigationController?.popViewController(animated: true)
+        firstViewController.justRegistered = true
     }
     
     /*

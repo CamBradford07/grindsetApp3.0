@@ -15,9 +15,10 @@ import UIKit
 
 class rateOneClassViewController: UIViewController{
     
-    
-    
-    
+    @IBOutlet weak var funSegment: UISegmentedControl!
+    @IBOutlet weak var difSegment: UISegmentedControl!
+    @IBOutlet weak var useSegment: UISegmentedControl!
+    @IBOutlet weak var workSegment: UISegmentedControl!
     
     @IBOutlet weak var titleOutletOneRate: UILabel!
     
@@ -36,6 +37,10 @@ class rateOneClassViewController: UIViewController{
             titleOutletOneRate.text = "no class to Rate!"
         }
         
+            funSegment.selectedSegmentIndex = 2
+            difSegment.selectedSegmentIndex = 2
+            useSegment.selectedSegmentIndex = 2
+            workSegment.selectedSegmentIndex = 2
         
         // Do any additional setup after loading the view.
     }
