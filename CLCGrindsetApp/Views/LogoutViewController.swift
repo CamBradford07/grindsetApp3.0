@@ -21,7 +21,8 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
 
         loadCoursesFromCSV()
         
-        areYouLabel.text = "User logged in: \((AppData.currentStudent!).id)\nAre You A..."
+//        areYouLabel.text = "User logged in: \((AppData.currentStudent!).id)\nAre you a student or teacher?"
+        areYouLabel.text = "Are you a student or teacher?"
         
         self.navigationItem.hidesBackButton = true
 

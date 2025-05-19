@@ -36,7 +36,6 @@ var alreadyLoggedIn = false
             return
         }
         
-        alreadyLoggedIn = true
         let email = emailTextOutlet.text ?? ""
         let password = passwordFieldOutlet.text ?? ""
         
@@ -52,20 +51,29 @@ var alreadyLoggedIn = false
                     break
                 }
             }
-            print(userFound)
+//            print(userFound)
             
             if userFound == true{
                 createAlert(alertTitle: "Email already registered", alertDesc: "Email has already been created")
             } else {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                    print("User Creation")
-                    var newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                    if let error = error {
+//                        print("User creation failed: \(error.localizedDescription)")
+                        self.createAlert(alertTitle: "Account Creation Failed", alertDesc: error.localizedDescription)
+                        return
+                    }
+
+//                    print("User Creation Successful for \(email)")
+
+                    // Now safe to continue
+                    let newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
                     newStudent.addToFirebase(docRef: AppData.ref)
                     AppData.currentStudent = newStudent
                     AppData.saveUserAndPass()
-                   AppData.loadSelectedClasses()
+                    AppData.loadSelectedClasses()
+                    self.alreadyLoggedIn = true
                     self.performSegue(withIdentifier: "registerSuccess", sender: self)
-                }
+                } // chat fixed error finding
             }
             
             

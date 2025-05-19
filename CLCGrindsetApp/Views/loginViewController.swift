@@ -78,37 +78,35 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
 //            print(userFound)
             
             if userFound == true {
-                var worked = false
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                    guard error == nil else {
-//                        print("Sign in failed: \(error!.localizedDescription)")
+                    guard let self = self else { return }
+
+                    if let error = error {
+                        self.createAlert(alertTitle: "Incorrect Password", alertDesc: "Password is incorrect")
+                        print("Sign in failed: \(error.localizedDescription)")
                         return
                     }
+
                     // sign-in was successful
-                    guard let self = self else { return }
                     guard let userIndex = AppData.ids.firstIndex(of: email) else {
                         print("Email not found in AppData")
                         return
                     }
+
                     AppData.currentStudent = AppData.students[userIndex]
                     AppData.saveUserAndPass()
                     AppData.loadSelectedClasses()
-                    worked = true
                     self.alreadyLoggedIn = true
-                }//chat fixed some error here
-                var contin = true
-                if !worked{
-                    createAlert(alertTitle: "Incorrect Password", alertDesc: "Password is incorrect")
-                    contin = false
-                }
-                if contin{
-                    if AppData.currentStudent.isStudent{
+
+                    // Navigate to correct screen after login
+                    if AppData.currentStudent.isStudent {
                         self.performSegue(withIdentifier: "studentLogIn", sender: self)
                     } else {
                         self.performSegue(withIdentifier: "teacherLogIn", sender: self)
                     }
                 }
-            } else {
+            } //chat fixed sign in and crash error for this section
+            else {
                 let alert = UIAlertController(title: "Account Not Found", message: "No account was found with that information", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Create Account", style: .default) {(action) in
                     self.performSegue(withIdentifier: "makeNew", sender: nil)

@@ -24,11 +24,11 @@ class firstViewController: UIViewController {
         
         AppData.ref.addSnapshotListener { documentSnapshot, error in
                 guard let document = documentSnapshot else {
-                  print("Error fetching document: \(error!)")
+//                  print("Error fetching document: \(error!)")
                   return
                 }
                 guard let data = document.data() else {
-                  print("Document data was empty.")
+//                  print("Document data was empty.")
                   return
                 }
             
