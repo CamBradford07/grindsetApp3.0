@@ -8,7 +8,7 @@
 import Foundation
 
 //paralell array with all courses
-var allRanks: [Rank] = []
+var allRanks: [String:Rank] = [:]
 
 
 

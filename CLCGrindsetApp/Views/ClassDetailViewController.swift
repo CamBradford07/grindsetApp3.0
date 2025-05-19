@@ -25,7 +25,7 @@ class ClassDetailViewController: UIViewController  {
         subjectLabel.text = "Subject: \(classClicked.cclass.subject)"
         creditLabel.text = "Credits: \(classClicked.cclass.credits)"
         gradeLabel.text = "\(classClicked.cclass.eligibleGrades)"
-        textView.text = "•Required Classes: \(classClicked.cclass.prerequisite)\n•\(classClicked.cclass.term)\n•Fun Rating: \(allRanks[AppData.viewIndex].getFunRank())\n•Difficulty Rating: \(allRanks[AppData.viewIndex].getDifficultyRank())\n•Usefulness Rating: \(allRanks[AppData.viewIndex].getUsefulnessRank())\n•Work Load Rating: \(allRanks[AppData.viewIndex].getWorkRank())\n•Description \(classClicked.cclass.description)\n•Notes: \(classClicked.cclass.enrollmentNotes)"
+//        textView.text = "•Required Classes: \(classClicked.cclass.prerequisite)\n•\(classClicked.cclass.term)\n•Fun Rating: \(allRanks[classClicked.cclass.courseID].getFunRank)\n•Difficulty Rating: \(allRanks[AppData.viewIndex].getDifficultyRank())\n•Usefulness Rating: \(allRanks[AppData.viewIndex].getUsefulnessRank())\n•Work Load Rating: \(allRanks[AppData.viewIndex].getWorkRank())\n•Description \(classClicked.cclass.description)\n•Notes: \(classClicked.cclass.enrollmentNotes)"
         
         if CompletedClassesViewController.noShowButton{
             addButton.isHidden = true
@@ -36,13 +36,6 @@ class ClassDetailViewController: UIViewController  {
     }
     @IBAction func addToSchedule(_ sender: Any) {
         
-        for yum in AppData.currentStudent.selectedClasses{
-            if classClicked.cclass.courseID == yum{
-                // create alert or somethin
-                createAlert(alertTitle: "Class already added", alertDesc: "The class is already present in your schedule.")
-                return
-            }
-        }
         classClicked.selectedClasses.append(classClicked.cclass)
         AppData.currentStudent.selectedClasses.append(classClicked.cclass.courseID)
         AppData.currentStudent.saveChanges(docRef: AppData.ref)

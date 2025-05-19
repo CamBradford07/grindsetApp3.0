@@ -59,7 +59,6 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
             return
         }
         
-        alreadyLoggedIn = true
         
         let email = emailTextOutlet.text ?? ""
         let password = passwordFieldOutlet.text ?? ""
@@ -76,30 +75,41 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                     break
                 }
             }
-            print(userFound)
+//            print(userFound)
             
-            if userFound == true{
-                var worked = false
+            if userFound == true {
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                    print("User Accessed")
-                    var userIndex = AppData.ids.firstIndex(of: email)!
+                    guard let self = self else { return }
+
+                    if let error = error {
+                        self.createAlert(alertTitle: "Incorrect Password", alertDesc: "Password is incorrect")
+                        print("Sign in failed: \(error.localizedDescription)")
+                        return
+                    }
+
+                    // sign-in was successful
+                    guard let userIndex = AppData.ids.firstIndex(of: email) else {
+                        print("Email not found in AppData")
+                        return
+                    }
+
                     AppData.currentStudent = AppData.students[userIndex]
                     AppData.saveUserAndPass()
-                   AppData.loadSelectedClasses()
-                    worked = true
-                    if AppData.currentStudent.isStudent{
-                        self!.performSegue(withIdentifier: "studentLogIn", sender: self)
+                    AppData.loadSelectedClasses()
+                    self.alreadyLoggedIn = true
+
+                    // Navigate to correct screen after login
+                    if AppData.currentStudent.isStudent {
+                        self.performSegue(withIdentifier: "studentLogIn", sender: self)
                     } else {
-                        self!.performSegue(withIdentifier: "teacherLogIn", sender: self)
+                        self.performSegue(withIdentifier: "teacherLogIn", sender: self)
                     }
                 }
-                if !worked{
-                    createAlert(alertTitle: "Incorrect Password", alertDesc: "Password is incorrect")
-                }
-            } else {
+            } //chat fixed sign in and crash error for this section
+            else {
                 let alert = UIAlertController(title: "Account Not Found", message: "No account was found with that information", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Create Account", style: .default) {(action) in
-                    self.performSegue(withIdentifier: "registerStart", sender: nil)
+                    self.performSegue(withIdentifier: "makeNew", sender: nil)
                             }
                 alert.addAction(action)
                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
@@ -129,7 +139,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
 
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
           guard error == nil else {
-            print(error)
+//            print(error)
               return
           }
 
@@ -237,11 +247,11 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
             fatalError("Invalid state: A login callback was received, but no login request was sent.")
           }
           guard let appleIDToken = appleIDCredential.identityToken else {
-            print("Unable to fetch identity token")
+//            print("Unable to fetch identity token")
             return
           }
           guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-            print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+//            print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
             return
           }
           // Initialize a Firebase credential, including the user's full name.
@@ -254,7 +264,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
               // Error. If error.code == .MissingOrInvalidNonce, make sure
               // you're sending the SHA256-hashed nonce as a hex string with
               // your request to Apple.
-                  print(error?.localizedDescription)
+//                  print(error?.localizedDescription)
               return
             }
               var user = appleIDCredential.user
@@ -288,7 +298,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
 
       func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         // Handle error.
-          print(error)
+//          print(error)
       }
 
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
