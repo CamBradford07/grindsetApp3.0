@@ -46,6 +46,38 @@ class firstViewController: UIViewController {
             
               }
 
+//        AppData.rankRef.addSnapshotListener { documentSnapshot, error in
+//                guard let document = documentSnapshot else {
+//                  print("Error fetching document: \(error!)")
+//                  return
+//                }
+//                guard let data = document.data() else {
+//                  print("Document data was empty.")
+//                  return
+//                }
+//            
+//            
+//            // we are going to overhaul this to save the ranks instead.
+//            // it should work... right???
+//            // first remove all the things in the allRanks array
+//            
+//            
+////            AppData.ids.removeAll()
+////            AppData.students.removeAll()
+//            
+//            for key in data.keys{
+//                AppData.ids.append(key)
+//                    let dataArray = data[key] as! [String : Any]
+//                    let uncodedAccount = Student(dict: dataArray)
+//                AppData.students.append(uncodedAccount)
+//                
+//            }
+//            
+//            
+//              }
+
+        
+        
         // Do any additional setup after loading the view.
     }
     
