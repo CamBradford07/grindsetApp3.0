@@ -21,6 +21,7 @@ class firstViewController: UIViewController {
         // this code will check if the account already exists. should probably reorganize students into AppData, but i dont have enough time to make that work
         loadCoursesFromCSV()
         AppData.ref = Firestore.firestore().collection("data").document("Accounts")
+        AppData.rankRef = Firestore.firestore().collection("data").document("Ranks")
         
         AppData.ref.addSnapshotListener { documentSnapshot, error in
                 guard let document = documentSnapshot else {
@@ -46,35 +47,34 @@ class firstViewController: UIViewController {
             
               }
 
-//        AppData.rankRef.addSnapshotListener { documentSnapshot, error in
-//                guard let document = documentSnapshot else {
-//                  print("Error fetching document: \(error!)")
-//                  return
-//                }
-//                guard let data = document.data() else {
-//                  print("Document data was empty.")
-//                  return
-//                }
-//            
-//            
-//            // we are going to overhaul this to save the ranks instead.
-//            // it should work... right???
-//            // first remove all the things in the allRanks array
-//            
-//            
-////            AppData.ids.removeAll()
-////            AppData.students.removeAll()
-//            
-//            for key in data.keys{
-//                AppData.ids.append(key)
-//                    let dataArray = data[key] as! [String : Any]
-//                    let uncodedAccount = Student(dict: dataArray)
-//                AppData.students.append(uncodedAccount)
-//                
-//            }
-//            
-//            
-//              }
+        AppData.rankRef.addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                  print("Error fetching document: \(error!)")
+                  return
+                }
+                guard let data = document.data() else {
+                  print("Document data was empty.")
+                  return
+                }
+            
+            
+//             we are going to overhaul this to save the ranks instead.
+//             it should work... right???
+//             first remove all the things in the allRanks array
+            
+            
+            AppData.ids.removeAll()
+            AppData.students.removeAll()
+            
+            for key in data.keys{
+                if let decoded = try? JSONDecoder().decode(Rank.self, from: data[key] as! Data){
+                    allRanks[key] = decoded
+                }
+                
+            }
+            
+            
+              }
 
         
         

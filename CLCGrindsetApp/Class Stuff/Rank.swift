@@ -87,3 +87,13 @@ class Rank: Codable{
     
     
 }
+
+
+func saveRankToFirebase(classToUse: String){
+    if let banana = allRanks[classToUse]{
+            if let encoded = try? JSONEncoder().encode(allRanks[classToUse]){
+                let uploadableStud = [classToUse : encoded] as! [String : Any]
+                AppData.rankRef.updateData(uploadableStud)
+            }
+    }
+}
