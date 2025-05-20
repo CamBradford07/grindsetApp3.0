@@ -26,8 +26,22 @@ var alreadyLoggedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        passwordFieldOutlet.delegate = self
+        emailTextOutlet.delegate = self
+        passwordFieldOutlet.text = ""
+        emailTextOutlet.text = ""
+        emailTextOutlet.autocorrectionType = .no
+        passwordFieldOutlet.autocorrectionType = .no
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -86,7 +100,11 @@ var alreadyLoggedIn = false
             self.present(alert, animated: true)
         }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
