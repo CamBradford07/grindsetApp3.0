@@ -59,7 +59,7 @@ class rateOneClassViewController: UIViewController{
             
                     if let encoded = try? JSONEncoder().encode(allRanks[AppData.courseToRate!.courseID]){
                         let uploadableStud = [AppData.courseToRate!.courseID : encoded] as! [String : Any]
-                        AppData.rankRef.setData(uploadableStud)
+                        AppData.rankRef.setData(uploadableStud, merge: true)
                     }
             
         }else{
