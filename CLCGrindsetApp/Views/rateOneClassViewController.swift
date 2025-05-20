@@ -50,10 +50,10 @@ class rateOneClassViewController: UIViewController{
         
         if allRanks[AppData.courseToRate!.courseID] == nil{
             var rank = Rank()
-            rank.totalFunRank.append(fun ?? 1.0)
-            rank.totalDifficultyRank.append(dif ?? 1.0)
-            rank.totalWorkRank.append(work ?? 1.0)
-            rank.totalUsefulnessRank.append(use ?? 1.0)
+            rank.totalFunRank.append(fun ?? 3.0)
+            rank.totalDifficultyRank.append(dif ?? 3.0)
+            rank.totalWorkRank.append(work ?? 3.0)
+            rank.totalUsefulnessRank.append(use ?? 3.0)
             
             allRanks[AppData.courseToRate!.courseID] = rank
             
@@ -64,10 +64,10 @@ class rateOneClassViewController: UIViewController{
             
         }else{
             var curRank = allRanks[AppData.courseToRate!.courseID]!
-            curRank.totalFunRank.append(fun ?? 1.0)
-            curRank.totalDifficultyRank.append(dif ?? 1.0)
-            curRank.totalWorkRank.append(work ?? 1.0)
-            curRank.totalUsefulnessRank.append(use ?? 1.0)
+            curRank.totalFunRank.append(fun ?? 3.0)
+            curRank.totalDifficultyRank.append(dif ?? 3.0)
+            curRank.totalWorkRank.append(work ?? 3.0)
+            curRank.totalUsefulnessRank.append(use ?? 3.0)
             allRanks[AppData.courseToRate!.courseID]! = curRank
             saveRankToFirebase(classToUse: AppData.courseToRate!.courseID)
         }
