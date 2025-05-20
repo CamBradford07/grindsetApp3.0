@@ -46,12 +46,13 @@ class AppData{
     
     static func loadSelectedClasses(){
         classClicked.selectedClasses.removeAll()
-        print(allCourses)
+//        print(allCourses)
         
         for classID in currentStudent.selectedClasses{
             if let newCourse = getCourseByID(id: classID){
-                print("Success")
+                print("got a course")
                 classClicked.selectedClasses.append(newCourse)
+                
             }else{
                 print("Error")
             }

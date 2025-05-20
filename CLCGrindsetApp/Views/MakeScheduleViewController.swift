@@ -43,6 +43,7 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             classClicked.selectedClasses.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             
@@ -66,12 +67,6 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
                 GradArrays.totalCreditReq = (GradArrays.totalCreditReq < 0) ? 0 : GradArrays.totalCreditReq
             }
             
-            
-            
-            
-            
-            
-            
             completedClasses.completedClasses.append(swipedCourse)
             classClicked.selectedClasses.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -90,17 +85,6 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         
         // now only shows this one and not delete??
     }
-    
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true  // or your own condition
-    } //chat gave me function
-    
-    func tableView(_ tableView: UITableView,
-                   moveRowAt sourceIndexPath: IndexPath,
-                   to destinationIndexPath: IndexPath) {
-        let movedObject = classClicked.selectedClasses.remove(at: sourceIndexPath.row)
-        classClicked.selectedClasses.insert(movedObject, at: destinationIndexPath.row)
-    } //chat gave me function
     
     
     // new copy

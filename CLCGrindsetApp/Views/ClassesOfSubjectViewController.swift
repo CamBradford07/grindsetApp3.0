@@ -7,13 +7,7 @@
 
 import UIKit
 
-class classClicked: UITableViewCell{
-    static var cclass: Course = Course(courseID: "",courseName: "",credits: "",subject: "",term: "",eligibleGrades: "",prerequisite: "",corequisite: "",enrollmentNotes: "",description: "",isElective: "",courseType: ""
-    )
-    
-    static var selectedClasses = [Course]()
 
-}
 
 class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 

@@ -41,15 +41,42 @@ class ClassDetailViewController: UIViewController  {
     }
     @IBAction func addToSchedule(_ sender: Any) {
         
-        classClicked.selectedClasses.append(classClicked.cclass)
-        AppData.currentStudent.selectedClasses.append(classClicked.cclass.courseID)
-        AppData.currentStudent.saveChanges(docRef: AppData.ref)
+        
+        
+        let alert = UIAlertController(title: "Add Both Classes?", message: "This class is a year long class, would you like to add both semesters?", preferredStyle: .alert)
+        let Both = UIAlertAction(title: "Add Both", style: .default) {(action) in
+            classClicked.selectedClasses.append(classClicked.cclass)
+            AppData.currentStudent.selectedClasses.append(classClicked.cclass.courseID)
+            let otherClass = allCourses.first(where: {
+                    $0.courseName == classClicked.cclass.courseName &&
+                    $0.courseID != classClicked.cclass.courseID
+            }) //chat help
+            classClicked.selectedClasses.append(otherClass!)
+            AppData.currentStudent.selectedClasses.append(otherClass!.courseID)
+            AppData.currentStudent.saveChanges(docRef: AppData.ref)
+            self.performSegue(withIdentifier: "allTheWayBack", sender: nil)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            }
+        let One = UIAlertAction(title: "Add One", style: .default) {(action) in
+            classClicked.selectedClasses.append(classClicked.cclass)
+            AppData.currentStudent.selectedClasses.append(classClicked.cclass.courseID)
+            AppData.currentStudent.saveChanges(docRef: AppData.ref)
+            self.performSegue(withIdentifier: "allTheWayBack", sender: nil)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: false)
+        }
+        alert.addAction(Both)
+        alert.addAction(One)
+        
+        self.present(alert, animated: true)
 
-        self.performSegue(withIdentifier: "allTheWayBack", sender: nil)
-        self.navigationController?.popViewController(animated: false)
-        self.navigationController?.popViewController(animated: false)
-        self.navigationController?.popViewController(animated: false)
-        self.navigationController?.popViewController(animated: false)
+
+        
 
         
         //classClicked.selectedClass = currentSubjectClasses[periodClicked.selectedPeriod].courseName
@@ -61,5 +88,7 @@ class ClassDetailViewController: UIViewController  {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
+    
+    
     
 }

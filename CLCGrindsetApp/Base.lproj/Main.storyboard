@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KkZ-me-Unw">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,14 +14,14 @@
             <objects>
                 <viewController id="xkS-QD-sXR" customClass="GradReqViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bxE-4k-vwN">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="afP-mT-d7l">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aWu-r8-O3v">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="sectionIndexBackgroundColor" systemColor="systemGray2Color"/>
                                         <prototypes>
@@ -205,30 +206,30 @@
             <objects>
                 <viewController id="oBk-Re-e6I" customClass="loginViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zed-Gu-fbf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-tb-d3O">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-uk-dKU">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="126.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="107.33333333333333"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1X-Ce-3IO">
-                                        <rect key="frame" x="0.0" y="126.33333333333334" width="393" height="84.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="107.33333333333334" width="393" height="71.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kml-kZ-0r0">
-                                        <rect key="frame" x="0.0" y="210.66666666666666" width="393" height="83.999999999999972"/>
+                                        <rect key="frame" x="0.0" y="178.66666666666669" width="393" height="71.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bu0-Fo-9Ht">
-                                        <rect key="frame" x="0.0" y="294.66666666666669" width="393" height="126.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="250.33333333333334" width="393" height="107.33333333333334"/>
                                         <color key="backgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login">
@@ -239,7 +240,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yz-0q-dmH">
-                                        <rect key="frame" x="0.0" y="421" width="393" height="126.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="357.66666666666669" width="393" height="107"/>
                                         <color key="backgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Press to create new account">
@@ -250,13 +251,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Options:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7L-9k-lfh">
-                                        <rect key="frame" x="0.0" y="547.33333333333337" width="393" height="63"/>
+                                        <rect key="frame" x="0.0" y="464.66666666666663" width="393" height="53.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7Q-Ub-4wu">
-                                        <rect key="frame" x="0.0" y="610.33333333333337" width="393" height="116"/>
+                                        <rect key="frame" x="0.0" y="518.33333333333337" width="393" height="98.333333333333371"/>
                                         <color key="backgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login with Apple">
@@ -267,7 +268,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsO-MK-VRQ">
-                                        <rect key="frame" x="0.0" y="726.33333333333337" width="393" height="115.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="616.66666666666663" width="393" height="98.333333333333371"/>
                                         <color key="backgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login with Google">
@@ -317,30 +318,30 @@
             <objects>
                 <viewController id="Xq1-n5-Gb8" customClass="registerViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bgb-OY-r4d">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-vA-pcO">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4t-eZ-hMe">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="210.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="178.66666666666666"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVp-qY-bQm">
-                                        <rect key="frame" x="0.0" y="210.66666666666663" width="393" height="168.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="178.66666666666669" width="393" height="143"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8YH-x2-OBi">
-                                        <rect key="frame" x="0.0" y="379" width="393" height="168.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="321.66666666666669" width="393" height="143"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-cZ-q7a">
-                                        <rect key="frame" x="0.0" y="547.33333333333337" width="393" height="210.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="464.66666666666663" width="393" height="179"/>
                                         <color key="backgroundColor" red="0.21568629149999999" green="0.48627454040000001" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Register">
@@ -351,7 +352,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV3-lG-gjb">
-                                        <rect key="frame" x="0.0" y="757.66666666666663" width="393" height="84.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="643.66666666666663" width="393" height="71.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -527,26 +528,26 @@
             <objects>
                 <viewController id="dMh-kL-sgi" customClass="rateOneClassViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIK-ed-ZZX">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aIS-cu-kWk">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Rate ____" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CHy-Oy-LqD">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="81.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="68.666666666666671"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ3-QJ-aGW">
-                                        <rect key="frame" x="0.0" y="81.333333333333329" width="393" height="80.999999999999986"/>
+                                        <rect key="frame" x="0.0" y="68.666666666666657" width="393" height="68.333333333333343"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="37"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-JE-OFh">
-                                        <rect key="frame" x="0.0" y="162.33333333333334" width="393" height="82.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="137" width="393" height="69.666666666666686"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
                                             <segment title="" image="star.fill" catalog="system"/>
@@ -561,13 +562,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-uo-iP0">
-                                        <rect key="frame" x="0.0" y="243.66666666666663" width="393" height="81"/>
+                                        <rect key="frame" x="0.0" y="205.66666666666669" width="393" height="68.333333333333314"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="37"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-bT-niq">
-                                        <rect key="frame" x="0.0" y="324.66666666666669" width="393" height="82.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="274" width="393" height="69.666666666666686"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
                                             <segment title="" image="star.fill" catalog="system"/>
@@ -582,13 +583,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usefulness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHI-WI-qlg">
-                                        <rect key="frame" x="0.0" y="406" width="393" height="81.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="342.66666666666669" width="393" height="68.333333333333314"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="37"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgo-nY-eJd">
-                                        <rect key="frame" x="0.0" y="487.33333333333326" width="393" height="82"/>
+                                        <rect key="frame" x="0.0" y="411" width="393" height="69.666666666666686"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
                                             <segment title="" image="star.fill" catalog="system"/>
@@ -603,13 +604,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Load" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-Xf-pxu">
-                                        <rect key="frame" x="0.0" y="568.33333333333337" width="393" height="81.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="479.66666666666657" width="393" height="68.333333333333314"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="37"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Bx-fr-oXx">
-                                        <rect key="frame" x="0.0" y="649.66666666666663" width="393" height="82"/>
+                                        <rect key="frame" x="0.0" y="548" width="393" height="69.666666666666629"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <segments>
                                             <segment title="" image="star.fill" catalog="system"/>
@@ -624,7 +625,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-k6-aI7">
-                                        <rect key="frame" x="0.0" y="730.66666666666663" width="393" height="30"/>
+                                        <rect key="frame" x="0.0" y="616.66666666666663" width="393" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="WjO-Ss-wji"/>
                                         </constraints>
@@ -633,16 +634,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewF-WO-oEf">
-                                        <rect key="frame" x="0.0" y="760.66666666666663" width="393" height="81.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="646.66666666666663" width="393" height="68.333333333333371"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGx-v9-geB">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="81.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="68.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNf-Ei-QJM">
-                                                <rect key="frame" x="59" y="0.0" width="275" height="81.333333333333329"/>
+                                                <rect key="frame" x="59" y="0.0" width="275" height="68.333333333333329"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Submit">
                                                     <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
@@ -653,7 +654,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvC-Mq-ARp">
-                                                <rect key="frame" x="334" y="0.0" width="59" height="81.333333333333329"/>
+                                                <rect key="frame" x="334" y="0.0" width="59" height="68.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -705,7 +706,7 @@
             <objects>
                 <viewController id="DnF-uX-tZn" customClass="EvanViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GvV-Xv-iNf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-Zd-eVq">
@@ -764,26 +765,26 @@
             <objects>
                 <viewController id="r4A-Cp-BgM" customClass="TeacherMainViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DEG-2p-JJM">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d06-aB-qQG">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tg-H4-z2A">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="210.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="178.66666666666666"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qys-dO-07m">
-                                        <rect key="frame" x="0.0" y="210.66666666666663" width="393" height="210.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="178.66666666666669" width="393" height="179"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-VI-g1A">
-                                        <rect key="frame" x="0.0" y="421.00000000000006" width="393" height="210.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="357.66666666666669" width="393" height="178.66666666666669"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add A Class">
                                             <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="40"/>
@@ -794,7 +795,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-ZF-gJk">
-                                        <rect key="frame" x="0.0" y="631.66666666666663" width="393" height="210.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="536.33333333333337" width="393" height="178.66666666666663"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="View Ranks">
                                             <fontDescription key="titleFontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="40"/>
@@ -846,14 +847,14 @@
             <objects>
                 <viewController id="UKs-3F-Xa5" customClass="ClassReqSpecificViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h2h-7L-0Zn">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bKP-e0-n92">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y1g-b8-dkr">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReqCell" rowHeight="100" id="IuV-kj-bYw" customClass="ReqCell" customModule="CLCGrindsetApp" customModuleProvider="target">
@@ -923,11 +924,11 @@
             <objects>
                 <viewController id="Q6V-Vw-Ocr" customClass="RatingViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M80-xs-AUV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zJQ-1f-8O0">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a Class to Rate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-2f-gRu">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="47.666666666666664"/>
@@ -968,7 +969,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSu-Uj-yY8">
-                                        <rect key="frame" x="0.0" y="117.66666666666669" width="393" height="30"/>
+                                        <rect key="frame" x="0.0" y="117.66666666666666" width="393" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="szD-Yd-Ny4"/>
                                         </constraints>
@@ -977,7 +978,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-Hb-wFe">
-                                        <rect key="frame" x="0.0" y="147.66666666666669" width="393" height="694.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="147.66666666666669" width="393" height="567.33333333333326"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" textLabel="BGi-Oh-btq" style="IBUITableViewCellStyleDefault" id="L2m-Am-Gpy">
@@ -1264,20 +1265,20 @@
             <objects>
                 <viewController id="Tsu-Z5-vbm" customClass="TeacherViewRankingsViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAt-Qi-axJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-6z-Yr5">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJW-a8-WKo">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="84.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="71.666666666666671"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Jq-sr-naG">
-                                        <rect key="frame" x="0.0" y="84.333333333333314" width="393" height="757.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="71.666666666666686" width="393" height="643.33333333333326"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherRateCell" id="nor-XV-cJF">
@@ -1321,14 +1322,14 @@
             <objects>
                 <viewController id="LZq-xh-BFL" customClass="TeacherSpecificRankViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywj-OU-ZnG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sY9-yO-WJW">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIE-Q7-rOi">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1359,11 +1360,11 @@
             <objects>
                 <viewController id="j9l-Fa-rbY" customClass="CompletedClassesViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZr-l6-kIn">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nkt-e1-dup">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Completed Classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yWN-tM-54Q">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
@@ -1375,7 +1376,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wce-Ja-mQk">
-                                        <rect key="frame" x="0.0" y="80" width="393" height="762"/>
+                                        <rect key="frame" x="0.0" y="80" width="393" height="635"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="OuH-IK-Aap" customClass="ClassCell" customModule="CLCGrindsetApp" customModuleProvider="target">
@@ -1462,20 +1463,20 @@ apfmae</string>
             <objects>
                 <viewController id="U2m-wg-TjM" customClass="StudentMenuViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vid-Wp-7UM">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iQ3-zu-fgQ">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L18-Yp-jt0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="168.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="143"/>
                                         <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-Y1-VI4">
-                                        <rect key="frame" x="0.0" y="168.33333333333331" width="393" height="168.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="143" width="393" height="143"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Rank Classes">
@@ -1487,7 +1488,7 @@ apfmae</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUj-gQ-pIE">
-                                        <rect key="frame" x="0.0" y="336.66666666666669" width="393" height="168.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="286" width="393" height="143"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Make Schedule">
@@ -1499,7 +1500,7 @@ apfmae</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-Wk-Oo3">
-                                        <rect key="frame" x="0.0" y="505.33333333333331" width="393" height="168.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="429" width="393" height="143"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Completed Courses">
@@ -1511,7 +1512,7 @@ apfmae</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpZ-th-WIz">
-                                        <rect key="frame" x="0.0" y="673.66666666666663" width="393" height="168.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="572" width="393" height="143"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Graduation Requirements">
@@ -1568,14 +1569,14 @@ apfmae</string>
             <objects>
                 <viewController id="egH-zy-CHz" customClass="ViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pIJ-JQ-aBa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="REW-U7-GIm">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wIh-Ap-REB">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectsCell" id="r5e-ie-A5S">
@@ -1616,11 +1617,11 @@ apfmae</string>
             <objects>
                 <viewController id="Wre-QM-p0D" customClass="ClassDetailViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P37-Xi-aWk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dZA-bn-qDL">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8s-y8-4Gk">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
@@ -1755,7 +1756,7 @@ apfmae</string>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-iQ-S2T">
-                                        <rect key="frame" x="0.0" y="671" width="393" height="171"/>
+                                        <rect key="frame" x="0.0" y="671" width="393" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1796,11 +1797,11 @@ apfmae</string>
             <objects>
                 <viewController id="11s-hl-6y6" customClass="MakeScheduleViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7W9-jg-GbE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FWD-WM-kEQ">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5d-Df-vhs">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
@@ -1827,7 +1828,7 @@ apfmae</string>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="efJ-TZ-qn5">
-                                        <rect key="frame" x="0.0" y="155" width="393" height="687"/>
+                                        <rect key="frame" x="0.0" y="155" width="393" height="560"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="69" id="SAy-1r-3i4" customClass="ClassCell" customModule="CLCGrindsetApp" customModuleProvider="target">
@@ -1913,14 +1914,14 @@ apfmae</string>
             <objects>
                 <viewController id="wTt-hc-IHl" customClass="ClassesOfSubjectViewController" customModule="CLCGrindsetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Abs-Qb-QLC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S3a-Ao-GzS">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dq8-AN-lfw">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                                         <color key="backgroundColor" red="0.2823529541" green="0.61568629740000003" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassesCell" rowHeight="91" id="WYh-qU-DVQ" customClass="ClassCell" customModule="CLCGrindsetApp" customModuleProvider="target">
@@ -2012,10 +2013,10 @@ apfmae</string>
         <segue reference="oBq-6i-yTw"/>
         <segue reference="3Ml-m6-OWZ"/>
         <segue reference="O9u-Rb-hwy"/>
-        <segue reference="87d-dG-uv2"/>
-        <segue reference="Zrg-Qx-dQm"/>
-        <segue reference="uYE-Z0-1VK"/>
-        <segue reference="lLS-gz-7sp"/>
+        <segue reference="pZL-fP-6u0"/>
+        <segue reference="tIq-eg-3hR"/>
+        <segue reference="xjG-wu-Rzo"/>
+        <segue reference="FWr-85-gVy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="lock" width="960" height="720"/>

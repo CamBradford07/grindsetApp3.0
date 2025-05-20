@@ -61,11 +61,11 @@ func loadCoursesFromCSV() {
             let columns = row.components(separatedBy: "\t")
 
             if columns.count < 12 {
-                print("Skipping row \(index + 2): expected 12 columns, got \(columns.count)")
+//                print("Skipping row \(index + 2): expected 12 columns, got \(columns.count)")
                 continue
             }
             if columns.count > 12 {
-                print("Skipping row \(index + 2): expected 12 columns, got \(columns.count)")
+//                print("Skipping row \(index + 2): expected 12 columns, got \(columns.count)")
                 continue
             }
 
@@ -89,6 +89,6 @@ func loadCoursesFromCSV() {
         }
 
     } catch {
-        print("Error reading CSV: \(error)")
+//        print("Error reading CSV: \(error)")
     }
 }
