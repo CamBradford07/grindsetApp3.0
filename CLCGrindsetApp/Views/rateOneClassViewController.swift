@@ -56,6 +56,12 @@ class rateOneClassViewController: UIViewController{
             rank.totalUsefulnessRank.append(use ?? 1.0)
             
             allRanks[AppData.courseToRate!.courseID] = rank
+            
+                    if let encoded = try? JSONEncoder().encode(allRanks[AppData.courseToRate!.courseID]){
+                        let uploadableStud = [AppData.courseToRate!.courseID : encoded] as! [String : Any]
+                        AppData.rankRef.setData(uploadableStud)
+                    }
+            
         }else{
             var curRank = allRanks[AppData.courseToRate!.courseID]!
             curRank.totalFunRank.append(fun ?? 1.0)
@@ -63,6 +69,7 @@ class rateOneClassViewController: UIViewController{
             curRank.totalWorkRank.append(work ?? 1.0)
             curRank.totalUsefulnessRank.append(use ?? 1.0)
             allRanks[AppData.courseToRate!.courseID]! = curRank
+            saveRankToFirebase(classToUse: AppData.courseToRate!.courseID)
         }
 
         
