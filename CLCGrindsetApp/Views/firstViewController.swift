@@ -63,8 +63,6 @@ class firstViewController: UIViewController {
 //             first remove all the things in the allRanks array
             
             
-            AppData.ids.removeAll()
-            AppData.students.removeAll()
             
             for key in data.keys{
                 if let decoded = try? JSONDecoder().decode(Rank.self, from: data[key] as! Data){
