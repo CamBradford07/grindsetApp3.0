@@ -73,9 +73,10 @@ class Student{
         if let encoded = try? JSONEncoder().encode(rankToBeSaved){
             rankInfo = encoded
         }
-        let informationDict = ["ID": id, "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!,  "TakenClasses" : takenClasses!, "Ranks":rankInfo!, "isStudent" : isStudent!] as! [String : Any]
-        let uploadableStud = [id : informationDict] as! [String : Any]
-        docRef.updateData(uploadableStud)
+        let informationDict = ["ID": "\(id)", "GradeLevel" : gradeLevel!, "SelectedClasses" : selectedClasses!,  "TakenClasses" : takenClasses!, "Ranks":rankInfo!, "isStudent" : isStudent!] as! [String : Any]
+        let uploadableStud = ["\(id)" : informationDict] as! [String : Any]
+        docRef.setData(uploadableStud, merge: true)
+//        docRef.updateData(uploadableStud)
     }
     
 }

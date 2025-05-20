@@ -100,8 +100,10 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
 
                     // Navigate to correct screen after login
                     if AppData.currentStudent.isStudent {
+                        firstViewController.justRegistered = false
                         self.performSegue(withIdentifier: "studentLogIn", sender: self)
                     } else {
+                        firstViewController.justRegistered = false
                         self.performSegue(withIdentifier: "teacherLogIn", sender: self)
                     }
                 }

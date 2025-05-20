@@ -63,7 +63,7 @@ var alreadyLoggedIn = false
                         return
                     }
 
-//                    print("User Creation Successful for \(email)")
+                    print("User Creation Successful for \(email)")
 
                     // Now safe to continue
                     let newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
