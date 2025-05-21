@@ -15,6 +15,7 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var areYouLabel: UILabel!
     
     var adminCode = "MQL927GH35"
+    @IBOutlet weak var yearSlider: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,7 @@ class LogoutViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func studentButton(_ sender: Any) {
         AppData.currentStudent.isStudent = true
+        AppData.currentStudent.gradeLevel = (yearSlider.selectedSegmentIndex+9)
         performSegue(withIdentifier: "finishedRegister", sender: nil)
         firstViewController.justRegistered = true
     }

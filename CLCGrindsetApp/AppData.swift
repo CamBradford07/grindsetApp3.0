@@ -17,10 +17,6 @@ class AppData{
     static var teacherCourseClicked: Course?
     
     
-    static var studentSchedule = ["No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected", "No class selected"]
-    
-    
-    
     static var ref: DocumentReference!
     static var rankRef: DocumentReference!
     static var ids = [String]()

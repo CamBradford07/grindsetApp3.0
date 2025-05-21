@@ -18,6 +18,7 @@ class registerViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextOutlet: UITextField!
     @IBOutlet weak var passwordFieldOutlet: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     fileprivate var currentNonce: String?
     
@@ -38,9 +39,10 @@ var alreadyLoggedIn = false
         
         let email = emailTextOutlet.text ?? ""
         let password = passwordFieldOutlet.text ?? ""
+        let name = nameTextField.text ?? ""
         
-        if email == "" || password == ""{
-            createAlert(alertTitle: "Invalid Input", alertDesc: "Email and Password cannot be blank")
+        if email == "" || password == "" || name == ""{
+            createAlert(alertTitle: "Invalid Input", alertDesc: "You must fill in all fields")
         }
         else{
             var userFound = false
@@ -66,7 +68,7 @@ var alreadyLoggedIn = false
                     print("User Creation Successful for \(email)")
 
                     // Now safe to continue
-                    let newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                    let newStudent = Student(id: email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String](), name: name)
                     newStudent.addToFirebase(docRef: AppData.ref)
                     AppData.currentStudent = newStudent
                     AppData.saveUserAndPass()

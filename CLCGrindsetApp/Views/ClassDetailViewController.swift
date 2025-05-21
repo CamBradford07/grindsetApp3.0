@@ -17,10 +17,11 @@ class ClassDetailViewController: UIViewController  {
     @IBOutlet weak var addButton: UIButton!
     
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         nameLabel.text = classClicked.cclass.courseName
         subjectLabel.text = "Subject: \(classClicked.cclass.subject)"
         creditLabel.text = "Credits: \(classClicked.cclass.credits)"
@@ -37,8 +38,8 @@ class ClassDetailViewController: UIViewController  {
         } else {
             addButton.isHidden = false
         }
-        
     }
+    
     @IBAction func addToSchedule(_ sender: Any) {
         
         

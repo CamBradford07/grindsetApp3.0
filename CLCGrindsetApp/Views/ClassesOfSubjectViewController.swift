@@ -25,6 +25,24 @@ class ClassesOfSubjectViewController: UIViewController, UITableViewDataSource, U
         currentSubjectClasses.removeAll { i in
             classClicked.selectedClasses.contains(i)
         }
+        currentSubjectClasses.removeAll { course in
+            print(course.eligibleGrades)
+            let allowedGrades = course.eligibleGrades
+                    .split(separator: ",")
+                    .compactMap { part -> Int? in
+                        let trimmed = part.trimmingCharacters(in: .whitespaces)
+                        // Remove "th", "st", "nd", "rd" suffixes
+                        let filtered = trimmed
+                            .replacingOccurrences(of: "th", with: "")
+                            .replacingOccurrences(of: "st", with: "")
+                            .replacingOccurrences(of: "nd", with: "")
+                            .replacingOccurrences(of: "rd", with: "")
+                        
+                        return Int(filtered)
+                    }
+            return !allowedGrades.contains(Int(AppData.currentStudent.gradeLevel))
+        }//chat help
+
         tableView.reloadData()
         
         

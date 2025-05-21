@@ -20,8 +20,9 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
         makeScheduleTableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // use save changes for student class (avoid add to firebase)
+        CompletedClassesViewController.noShowButton = false
         makeScheduleTableView.reloadData()
         
         
@@ -87,11 +88,18 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        classClicked.cclass = classClicked.selectedClasses[indexPath.row]
+        CompletedClassesViewController.noShowButton = true
+      
+        performSegue(withIdentifier: "seeDetails", sender: nil)
+
+//        CompletedClassesViewController.noShowButton
+    }
     // new copy
     
     
     @IBAction func infoButton(_ sender: Any) {
-            print("wtf")
             let alert = UIAlertController(title: "How to", message: "Add classes by clicking on a subject then class in that subject. Most classes will have 2 copies for each semester, fall and spring. If you make a mistake or have completed a class, swipe left to complete or delete the class", preferredStyle: UIAlertController.Style.alert)
             let alertAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(alertAction)
