@@ -31,6 +31,8 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
         emailTextOutlet.delegate = self
         passwordFieldOutlet.text = ""
         emailTextOutlet.text = ""
+        emailTextOutlet.autocorrectionType = .no
+        passwordFieldOutlet.autocorrectionType = .no
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
