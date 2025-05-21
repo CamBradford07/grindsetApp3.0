@@ -176,7 +176,11 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                 AppData.currentStudent = newStudent
                 AppData.saveUserAndPass()
                    AppData.loadSelectedClasses()
-                self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                if AppData.currentStudent.isStudent{
+                    self.performSegue(withIdentifier: "studentLogIn", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "teacherLogIn", sender: self)
+                }
             }
             
         }
