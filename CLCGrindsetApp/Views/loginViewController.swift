@@ -171,7 +171,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                    AppData.loadSelectedClasses()
                 self.performSegue(withIdentifier: "loginSuccess", sender: self)
             }else{
-                var newStudent = Student(id:user.profile?.name, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                var newStudent = Student(id:user.profile?.email, gradeLevel: 9, selectedClasses: [String](), takenClasses: [String](), name:user.profile?.name)
                 newStudent.addToFirebase(docRef: AppData.ref)
                 AppData.currentStudent = newStudent
                 AppData.saveUserAndPass()
@@ -288,7 +288,7 @@ class loginViewController: UIViewController, UITextFieldDelegate, ASAuthorizatio
                    AppData.loadSelectedClasses()
                   self.performSegue(withIdentifier: "loginSuccess", sender: self)
               }else{
-                  var newStudent = Student(id: "\(appleIDCredential.fullName!)", gradeLevel: 9, selectedClasses: [String](), takenClasses: [String]())
+                  var newStudent = Student(id: "\(appleIDCredential.fullName!)", gradeLevel: 9, selectedClasses: [String](), takenClasses: [String](), name: "name")
                   newStudent.addToFirebase(docRef: AppData.ref)
                   AppData.currentStudent = newStudent
                   AppData.saveUserAndPass()

@@ -30,8 +30,7 @@ var alreadyLoggedIn = false
         
         passwordFieldOutlet.delegate = self
         emailTextOutlet.delegate = self
-        passwordFieldOutlet.text = ""
-        emailTextOutlet.text = ""
+        nameTextField.delegate = self
         emailTextOutlet.autocorrectionType = .no
         passwordFieldOutlet.autocorrectionType = .no
 
@@ -39,6 +38,12 @@ var alreadyLoggedIn = false
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        passwordFieldOutlet.text = ""
+        emailTextOutlet.text = ""
+        nameTextField.text = ""
     }
     
     @objc func dismissKeyboard() {

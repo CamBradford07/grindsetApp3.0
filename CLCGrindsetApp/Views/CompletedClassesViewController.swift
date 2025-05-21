@@ -23,6 +23,12 @@ class CompletedClassesViewController: UIViewController, UITableViewDelegate, UIT
         tableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        completedClasses.completedClasses = allCourses.filter { course in
+            AppData.currentStudent.takenClasses.contains(course.courseID)
+        }//chathelp
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         completedClasses.completedClasses.count
     }
@@ -47,6 +53,8 @@ class CompletedClassesViewController: UIViewController, UITableViewDelegate, UIT
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             // share item at indexPath
             completedClasses.completedClasses.remove(at: indexPath.row)
+            AppData.currentStudent.takenClasses.remove(at: indexPath.row)
+            AppData.currentStudent.saveChanges(docRef: AppData.ref)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         }

@@ -55,7 +55,7 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let complete = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
-            var swipedCourse = allCourses.first(where: {$0.courseName.contains(classClicked.selectedClasses[indexPath.row].courseName)})! //chatgpt help
+            var swipedCourse = allCourses.first(where: {$0.courseID.contains(classClicked.selectedClasses[indexPath.row].courseID)})! //chatgpt help
             
             
             // FIX THIS STUFF -Eva
@@ -69,6 +69,9 @@ class MakeScheduleViewController: UIViewController, UITableViewDelegate, UITable
             }
             
             completedClasses.completedClasses.append(swipedCourse)
+            AppData.currentStudent.selectedClasses.removeAll { $0 == swipedCourse.courseID } //chat help
+            AppData.currentStudent.takenClasses.append(swipedCourse.courseID)
+            AppData.currentStudent.saveChanges(docRef: AppData.ref)
             classClicked.selectedClasses.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
